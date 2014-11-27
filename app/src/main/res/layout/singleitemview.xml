@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="1.37"
+        android:background="@android:color/darker_gray"
+        >
+
+        <ImageView
+            android:id="@+id/imagem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="#000000"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="4.15"
+        android:background="@android:color/darker_gray"
+        >
+
+
+
+        <TextView
+            android:id="@+id/labelBairro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bairro" />
+
+        <TextView
+            android:id="@+id/bairro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/labelBairro" />
+
+        <TextView
+            android:id="@+id/cidadelabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/labelBairro"
+            android:text="@string/cidade" />
+
+        <TextView
+            android:id="@+id/cidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bairro"
+            android:layout_toRightOf="@+id/cidadelabel" />
+
+        <TextView
+            android:id="@+id/proprietariolabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cidadelabel"
+            android:text="@string/proprietario" />
+
+        <TextView
+            android:id="@+id/proprietario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cidade"
+            android:layout_toRightOf="@+id/proprietariolabel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emaillabel"
+            android:layout_below="@id/proprietariolabel"
+            android:text="@string/email"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:layout_below="@id/proprietario"
+            android:layout_toRightOf="@id/emaillabel"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/telefonelabel"
+            android:layout_below="@id/emaillabel"
+            android:text="@string/telefone"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/telefone"
+            android:layout_below="@id/email"
+            android:layout_toRightOf="@id/telefonelabel"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/descricaolabel"
+            android:layout_below="@id/telefone"
+            android:text="@string/descricao"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/descricao"
+            android:layout_below="@id/telefone"
+            android:layout_toRightOf="@id/descricaolabel"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar e-mail"
+            android:id="@+id/botao_enviar_email"
+            android:layout_toEndOf="@+id/proprietariolabel"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Indicar amigo"
+            android:id="@+id/botao_indicar_amigo"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Traçar Rota"
+            android:id="@+id/botao_tracar_rota"
+            android:layout_toStartOf="@+id/botao_indicar_amigo"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/botao_enviar_email" />
+
+    </RelativeLayout>
+</LinearLayout>

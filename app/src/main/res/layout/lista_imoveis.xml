@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/labelBairro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bairro" />
+
+    <TextView
+        android:id="@+id/bairro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/labelBairro" />
+
+    <TextView
+        android:id="@+id/cidadelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelBairro"
+        android:text="@string/cidade" />
+
+    <TextView
+        android:id="@+id/cidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bairro"
+        android:layout_toRightOf="@+id/cidadelabel" />
+
+    <TextView
+        android:id="@+id/proprietariolabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cidadelabel"
+        android:text="@string/proprietario" />
+
+    <TextView
+        android:id="@+id/proprietario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cidade"
+        android:layout_toRightOf="@+id/cidadelabel" />
+
+    <ImageView
+        android:id="@+id/imagem_imovel"
+        android:layout_width="125dp"
+        android:layout_height="90dp"
+        android:layout_alignParentRight="true"
+        android:background="#000000"
+        android:padding="1dp" />
+
+</RelativeLayout>
