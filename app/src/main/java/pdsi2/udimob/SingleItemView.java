@@ -11,6 +11,8 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,6 +37,7 @@ public class SingleItemView extends Activity {
     String email;
     String descricao;
     Bitmap bitmap1;
+    Button enviar_email;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,6 +105,19 @@ public class SingleItemView extends Activity {
                 }
             }
         }.execute();
+
+
+        enviar_email = (Button) findViewById(R.id.botao_enviar_email);
+
+        enviar_email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(SingleItemView.this,ActivityEnviarEmail.class);
+                i.putExtra("email_contato",email);
+                startActivity(i);
+            }
+        });
+
 
     }
 }

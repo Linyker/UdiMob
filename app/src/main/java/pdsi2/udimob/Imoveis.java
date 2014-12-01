@@ -68,16 +68,16 @@ public class Imoveis extends Activity {
         };
 
         email = new String[]{
-                "contato0@email.com",
-                "contato1@email.com",
-                "contato2@email.com",
-                "contato3@email.com",
-                "contato4@email.com",
-                "contato5@email.com",
-                "contato6@email.com",
-                "contato7@email.com",
-                "contato8@email.com",
-                "contato9@email.com",
+                "linykerrm@gmail.com",
+                "linykerrm@gmail.com",
+                "linykerrm@gmail.com",
+                "linykerrm@gmail.com",
+                "linykerrm@gmail.com",
+                "linykerrm@gmail.com",
+                "linykerrm@gmail.com",
+                "linykerrm@gmail.com",
+                "linykerrm@gmail.com",
+                "linykerrm@gmail.com",
         };
 
         telefone = new String[]{

@@ -2,28 +2,28 @@
 <pre-dex-items>
 
     <item
-        dex="C:\Users\Linyker\AndroidStudioProjects\Udimob\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-4ba65424b267b486ebd241bf5a1e568dbec44239.jar"
+        dex="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-e36b2020e63b1cce16512d663f7ccb20b4ceb83b.jar"
+        jar="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
+    <item
+        dex="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\build\intermediates\pre-dexed\debug\classes-8d795a4637ac83934f122b07bb121fd0911d2900.jar"
+        jar="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.0"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
+    <item
+        dex="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-4ba65424b267b486ebd241bf5a1e568dbec44239.jar"
         jar="C:\Program Files (x86)\Java\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="21.1.0"
         sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e"/>
     <item
-        dex="C:\Users\Linyker\AndroidStudioProjects\Udimob\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-8d3dd5b62f808b3a13939247251ee93cba351780.jar"
-        jar="C:\Users\Linyker\AndroidStudioProjects\Udimob\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar"
-        jumboMode="false"
-        revision="21.1.0"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
-    <item
-        dex="C:\Users\Linyker\AndroidStudioProjects\Udimob\app\build\intermediates\pre-dexed\debug\classes-0dd1bee8026a1bdb3e4c22ef60e61c2587cb0781.jar"
-        jar="C:\Users\Linyker\AndroidStudioProjects\Udimob\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.1.71\classes.jar"
+        dex="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\build\intermediates\pre-dexed\debug\classes-bcbc9442f03e9353d97707fe4af781abbb61bb49.jar"
+        jar="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.1.71\classes.jar"
         jumboMode="false"
         revision="21.1.0"
         sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da"/>
-    <item
-        dex="C:\Users\Linyker\AndroidStudioProjects\Udimob\app\build\intermediates\pre-dexed\debug\classes-6c9b1e41f27b7998be9e5ef0d11c12f192ac04df.jar"
-        jar="C:\Users\Linyker\AndroidStudioProjects\Udimob\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.0"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
 
 </pre-dex-items>
