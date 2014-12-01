@@ -24,15 +24,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: pdsi2.udimob" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4734d017-235d-48f9-a5a5-f103db4aeaca" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityEnviarEmail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/Imoveis.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/Imoveis.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/MyActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/MyActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/SingleItemView.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/SingleItemView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/enviar_email.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/enviar_email.xml" />
+    <list default="true" id="4734d017-235d-48f9-a5a5-f103db4aeaca" name="Default" comment="Adicionado tela de envio de e-mail já funcionando">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Udimob.iws" />
@@ -1743,7 +1735,11 @@
       <created>1417126809236</created>
       <updated>1417126809236</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adicionado tela de envio de e-mail já funcionando">
+      <created>1417473903252</created>
+      <updated>1417473903253</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1777,7 +1773,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30664396" sideWeight="0.693646" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30664396" sideWeight="0.693646" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1846,7 +1842,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Pasta dto e classe Imovel adicionados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pasta dto e classe Imovel adicionados" />
+    <MESSAGE value="Adicionado tela de envio de e-mail já funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionado tela de envio de e-mail já funcionando" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
