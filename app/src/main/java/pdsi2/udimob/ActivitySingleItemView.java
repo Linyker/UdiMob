@@ -28,6 +28,7 @@ public class ActivitySingleItemView extends Activity {
     TextView txtEmail;
     TextView txtTelefone;
     TextView txtDescricao;
+    TextView txtEndereco;
     ImageView imgflag;
     String bairro;
     String cidade;
@@ -36,8 +37,10 @@ public class ActivitySingleItemView extends Activity {
     String telefone;
     String email;
     String descricao;
+    String endereco;
     Bitmap bitmap1;
-    Button enviar_email;
+    Button enviar_email,indicar_amigo;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +63,8 @@ public class ActivitySingleItemView extends Activity {
 
         telefone = i.getStringExtra("telefone");
 
+        endereco = i.getStringExtra("endereco");
+
         // Locate the TextViews in singleitemview.xml
         txtbairro = (TextView) findViewById(R.id.bairro);
         txtcidade = (TextView) findViewById(R.id.cidade);
@@ -67,7 +72,10 @@ public class ActivitySingleItemView extends Activity {
         txtEmail = (TextView) findViewById(R.id.email);
         txtTelefone = (TextView) findViewById(R.id.telefone);
         txtDescricao = (TextView) findViewById(R.id.descricao);
+        txtEndereco = (TextView) findViewById(R.id.endereco);
 
+        enviar_email = (Button) findViewById(R.id.botao_enviar_email);
+        indicar_amigo = (Button) findViewById(R.id.botao_indicar_amigo);
 
         // Locate the ImageView in singleitemview.xml
       //  imgflag = (ImageView) findViewById(R.id.flag);
@@ -79,6 +87,7 @@ public class ActivitySingleItemView extends Activity {
         txtEmail.setText(email);
         txtTelefone.setText(telefone);
         txtDescricao.setText(descricao);
+        txtEndereco.setText(endereco);
 
         // Load the image into the ImageView
        // imgflag.setImageResource(flag);
@@ -106,9 +115,6 @@ public class ActivitySingleItemView extends Activity {
             }
         }.execute();
 
-
-        enviar_email = (Button) findViewById(R.id.botao_enviar_email);
-
         enviar_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,6 +124,19 @@ public class ActivitySingleItemView extends Activity {
             }
         });
 
+        indicar_amigo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ActivitySingleItemView.this,ActivityIndicarAmigo.class);
+                i.putExtra("imobiliaria",proprietario);
+                i.putExtra("endereco",endereco);
+                i.putExtra("email",email);
+                i.putExtra("telefone",telefone);
+                i.putExtra("bairro",bairro);
+
+                startActivity(i);
+            }
+        });
 
     }
 }

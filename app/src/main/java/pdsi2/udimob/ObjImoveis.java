@@ -13,9 +13,11 @@ public class ObjImoveis {
     private String proprietario;
     private String email;
     private String telefone;
+    private String endereco;
 
 
-    public ObjImoveis(String bairro, String cidade, String imagem_url, String descricao, String proprietario, String email, String telefone) {
+
+    public ObjImoveis(String bairro, String cidade, String imagem_url, String descricao, String proprietario, String email, String telefone,String endereco) {
         this.bairro = bairro;
         this.cidade = cidade;
         this.imagem_url = imagem_url;
@@ -23,7 +25,18 @@ public class ObjImoveis {
         this.proprietario = proprietario;
         this.email = email;
         this.telefone = telefone;
+        this.endereco = endereco;
     }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+
 
     public String getBairro() {
         return bairro;

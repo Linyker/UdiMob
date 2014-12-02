@@ -10,6 +10,7 @@
     <string name="proprietario">Dono :</string>
     <string name="email">E-mail : </string>
     <string name="telefone">Telefone : </string>
+    <string name="endereco">Endereço : </string>
 
 
 </resources>

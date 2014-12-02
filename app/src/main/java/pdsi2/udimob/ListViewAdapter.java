@@ -136,6 +136,9 @@ public class ListViewAdapter extends BaseAdapter {
                 intent.putExtra("email",
                         (imovel.get(position).getEmail()));
 
+                intent.putExtra("endereco",
+                        (imovel.get(position).getEndereco()));
+
                 // Start SingleItemView Class
                 mContext.startActivity(intent);
             }

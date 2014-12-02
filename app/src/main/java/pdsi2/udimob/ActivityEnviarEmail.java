@@ -15,7 +15,7 @@ public class ActivityEnviarEmail extends Activity{
 
     private String email_contato,de,para,assunto,mensagem;
     private EditText editDe,editPara,editAssunto,editMensagem;
-    private Button botao_enviar,botao_cancelar;
+    private Button botao_enviar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,6 @@ public class ActivityEnviarEmail extends Activity{
         editMensagem = (EditText) findViewById(R.id.editMensagem);
 
         botao_enviar = (Button) findViewById(R.id.botao_enviar);
-        botao_cancelar = (Button) findViewById(R.id.botao_cancelar);
 
         Intent i = getIntent();
         email_contato = i.getStringExtra("email_contato");
@@ -50,11 +49,9 @@ public class ActivityEnviarEmail extends Activity{
                 email.setType("message/rfc822");
                 startActivity(Intent.createChooser(email,"Escolha por onde quer enviar :"));
 
+
             }
         });
-
-
-
 
     }
 }

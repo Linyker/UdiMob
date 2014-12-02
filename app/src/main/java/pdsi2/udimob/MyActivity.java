@@ -66,15 +66,15 @@ public class MyActivity extends Activity implements GoogleMap.OnMarkerClickListe
         ponto1.setLongitude(-48.2882804); ponto1.setLatitude(-18.8707074);
         ponto2.setLongitude(-48.2777712); ponto2.setLatitude(-18.957444);
 
-        //marcadores.add(ponto1);
-        //marcadores.add(ponto2);
+        marcadores.add(ponto1);
+        marcadores.add(ponto2);
 
 
-       // createMapView();
+        createMapView();
 
- //       minhaLocalizacao();
-   //     movimentarCamera(-18.9220717, -48.2635649);
-        //adicionarMarcadores();
+        minhaLocalizacao();
+        movimentarCamera(-18.9220717, -48.2635649);
+        adicionarMarcadores();
 
         Button botao_distancia = (Button) findViewById(R.id.botao_distancia);
         Button botao_rota = (Button) findViewById(R.id.botao_rota);

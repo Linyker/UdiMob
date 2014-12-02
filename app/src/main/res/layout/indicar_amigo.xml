@@ -52,9 +52,8 @@
         android:layout_height="wrap_content"
         android:gravity="top"
         android:inputType="textMultiLine"
-        android:lines="5"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        />
+        android:lines="10"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
 
     <Button
         android:id="@+id/botao_enviar"

@@ -28,6 +28,7 @@ public class ActivityImoveis extends Activity {
     String [] descricao;
     String [] email;
     String [] telefone;
+    String [] endereco;
     ArrayList<ObjImoveis> arraylist = new ArrayList<ObjImoveis>();
 
     @Override
@@ -41,6 +42,9 @@ public class ActivityImoveis extends Activity {
         bairro = new String[] { "Bairro 1", "Bairro 2", "Bairro 3","Bairro 4", "Bairro 5", "Bairro 6", "Bairro 7", "Bairro 8","Bairro 9", "Bairro 10" };
 
         proprietario = new String[] {"João","Maria","José","Marta","Joaquim","Fulano","Ciclano","Beltrano","Pedro","Marcos" };
+
+        endereco = new String[] {"Rua 1","Rua 2","Rua 3","Rua 4","Rua 5","Rua 6","Rua 7","Rua 8","Rua 9","Rua 10" };
+
 
         imagem_url = new String[] {
                 "http://nrksuper.no/super/files/2014/05/android.jpeg",
@@ -99,7 +103,7 @@ public class ActivityImoveis extends Activity {
 
         for (int i = 0; i < cidade.length; i++)
         {
-            ObjImoveis wp = new ObjImoveis(bairro[i],cidade[i],imagem_url[i],descricao[i],proprietario[i],email[i],telefone[i]);
+            ObjImoveis wp = new ObjImoveis(bairro[i],cidade[i],imagem_url[i],descricao[i],proprietario[i],email[i],telefone[i],endereco[i]);
             // Binds all strings into an array
             arraylist.add(wp);
         }
