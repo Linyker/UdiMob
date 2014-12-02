@@ -11,13 +11,11 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.http.AndroidHttpClient;
 import android.os.Bundle;
-import android.os.Looper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -35,9 +33,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -87,7 +83,7 @@ public class MyActivity extends Activity implements GoogleMap.OnMarkerClickListe
         botao_imoveis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MyActivity.this,Imoveis.class);
+                Intent i = new Intent(MyActivity.this,ActivityImoveis.class);
                 startActivity(i);
             }
         });

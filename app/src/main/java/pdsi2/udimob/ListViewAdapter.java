@@ -113,7 +113,7 @@ public class ListViewAdapter extends BaseAdapter {
             @Override
             public void onClick(View arg0) {
                 // Send single item click data to SingleItemView Class
-                Intent intent = new Intent(mContext, SingleItemView.class);
+                Intent intent = new Intent(mContext, ActivitySingleItemView.class);
                 // Pass all data rank
                 intent.putExtra("bairro",
                         (imovel.get(position).getBairro()));

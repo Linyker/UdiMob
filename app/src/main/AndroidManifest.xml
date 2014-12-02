@@ -17,7 +17,7 @@
 
         </activity>
 
-        <activity android:name=".Imoveis">
+        <activity android:name=".ActivityImoveis">
             <intent-filter>
                 <action android:name="android.intent.action.Imoveis"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

@@ -15,7 +15,7 @@ import android.widget.ListView;
 
 import com.google.android.gms.internal.ci;
 
-public class Imoveis extends Activity {
+public class ActivityImoveis extends Activity {
 
     // Declare Variables
     ListView list;

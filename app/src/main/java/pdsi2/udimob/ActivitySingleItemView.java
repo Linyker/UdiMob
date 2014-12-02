@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-public class SingleItemView extends Activity {
+public class ActivitySingleItemView extends Activity {
     // Declare Variables
     TextView txtbairro;
     TextView txtcidade;
@@ -112,7 +112,7 @@ public class SingleItemView extends Activity {
         enviar_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(SingleItemView.this,ActivityEnviarEmail.class);
+                Intent i = new Intent(ActivitySingleItemView.this,ActivityEnviarEmail.class);
                 i.putExtra("email_contato",email);
                 startActivity(i);
             }
