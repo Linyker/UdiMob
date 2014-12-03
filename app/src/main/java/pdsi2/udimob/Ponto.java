@@ -24,6 +24,9 @@ public class Ponto {
         this.latitude = latitude;
     }
 
-
+    public Ponto(double latitude,double longitude){
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 
 }

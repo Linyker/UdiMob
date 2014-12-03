@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -39,7 +41,7 @@ public class ActivitySingleItemView extends Activity {
     String descricao;
     String endereco;
     Bitmap bitmap1;
-    Button enviar_email,indicar_amigo;
+    Button enviar_email,indicar_amigo,ver_mapa;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,7 @@ public class ActivitySingleItemView extends Activity {
 
         enviar_email = (Button) findViewById(R.id.botao_enviar_email);
         indicar_amigo = (Button) findViewById(R.id.botao_indicar_amigo);
+        ver_mapa = (Button) findViewById(R.id.botao_ver_mapa);
 
         // Locate the ImageView in singleitemview.xml
       //  imgflag = (ImageView) findViewById(R.id.flag);
@@ -134,6 +137,16 @@ public class ActivitySingleItemView extends Activity {
                 i.putExtra("telefone",telefone);
                 i.putExtra("bairro",bairro);
 
+                startActivity(i);
+            }
+        });
+
+        ver_mapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ActivitySingleItemView.this,ActivityMapa.class);
+                i.putExtra("endereco",endereco);
+                i.putExtra("bairro",bairro);
                 startActivity(i);
             }
         });

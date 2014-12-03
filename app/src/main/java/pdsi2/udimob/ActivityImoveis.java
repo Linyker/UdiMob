@@ -37,13 +37,13 @@ public class ActivityImoveis extends Activity {
         setContentView(R.layout.imoveis);
 
         // Generate sample data
-        cidade = new String[] { "Uberlândia", "Uberaba", "Araguari", "Uberlândia", "Araguari", "Uberlândia", "Patrocinio", "Nova Ponte", "Uberaba", "Araguari" };
+        cidade = new String[] { "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia" };
 
-        bairro = new String[] { "Bairro 1", "Bairro 2", "Bairro 3","Bairro 4", "Bairro 5", "Bairro 6", "Bairro 7", "Bairro 8","Bairro 9", "Bairro 10" };
+        bairro = new String[] { "Brasil", "Centro", "Daniel Fonseca","Morada da Colina", "Centro", "Tibery", "Jardim das Palmeiras", "Brasil","Centro", "Cidade Jardim" };
 
         proprietario = new String[] {"João","Maria","José","Marta","Joaquim","Fulano","Ciclano","Beltrano","Pedro","Marcos" };
 
-        endereco = new String[] {"Rua 1","Rua 2","Rua 3","Rua 4","Rua 5","Rua 6","Rua 7","Rua 8","Rua 9","Rua 10" };
+        endereco = new String[] {"Avenida Cesário Alvim, 1331","Rua Rodolfo Correia, 470","Av Marcos de Freitas Costa, 1855","Av Rondon Pacheco, 3223","Avenida Getúlio Vargas, 1040","Avenida Espanha, 880","Avenida Dos Pássaros, 234","Avenida Mato Grosso, 694","Avenida Getúlio Vargas, 1040","Avenida Uirapuru, 961" };
 
 
         imagem_url = new String[] {

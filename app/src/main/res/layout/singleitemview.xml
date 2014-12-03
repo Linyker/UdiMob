@@ -152,8 +152,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Traçar Rota"
-            android:id="@+id/botao_tracar_rota"
+            android:text="Ver Mapa"
+            android:id="@+id/botao_ver_mapa"
             android:layout_toStartOf="@+id/botao_indicar_amigo"
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@+id/botao_enviar_email" />
