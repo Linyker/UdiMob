@@ -23,20 +23,9 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: pdsi2.udimob" />
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityMapa.java" line="354" mnemonic="9" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="4734d017-235d-48f9-a5a5-f103db4aeaca" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\src\main\java\pdsi2\udimob\MyActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityMapa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityImoveis.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityImoveis.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivitySingleItemView.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivitySingleItemView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/GeoCode.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/GeoCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/Ponto.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/Ponto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/indicar_amigo.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/indicar_amigo.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/singleitemview.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/singleitemview.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityMapa.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityMapa.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Udimob.iws" />
@@ -109,18 +98,29 @@
       <file leaf-file-name="ActivityMapa.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityMapa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.622905" vertical-offset="6271" max-vertical-offset="6732">
-              <caret line="392" column="66" selection-start-line="392" selection-start-column="66" selection-end-line="392" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.66201115" vertical-offset="5696" max-vertical-offset="7157">
+              <caret line="349" column="25" selection-start-line="349" selection-start-column="25" selection-end-line="349" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2276#2283#0" expanded="true" />
-                <element signature="e#3235#3468#0" expanded="true" />
-                <element signature="e#3457#3458#0" expanded="true" />
-                <element signature="e#3515#4478#0" expanded="true" />
-                <element signature="e#3729#3737#0" expanded="true" />
-                <element signature="e#4467#4468#0" expanded="true" />
-                <element signature="e#4521#5075#0" expanded="true" />
-                <element signature="e#5064#5065#0" expanded="true" />
+                <element signature="e#2330#2337#0" expanded="true" />
+                <element signature="e#3289#3522#0" expanded="true" />
+                <element signature="e#3511#3512#0" expanded="true" />
+                <element signature="e#3569#4542#0" expanded="true" />
+                <element signature="e#3789#3797#0" expanded="true" />
+                <element signature="e#4531#4532#0" expanded="true" />
+                <element signature="e#4585#5139#0" expanded="true" />
+                <element signature="e#5128#5129#0" expanded="true" />
+                <element signature="e#5889#5890#0" expanded="true" />
+                <element signature="e#5915#5916#0" expanded="true" />
+                <element signature="e#6422#6423#0" expanded="true" />
+                <element signature="e#6501#6502#0" expanded="true" />
+                <element signature="e#6561#6562#0" expanded="true" />
+                <element signature="e#6640#6641#0" expanded="true" />
+                <element signature="e#9139#10670#0" expanded="true" />
+                <element signature="e#10000#10481#0" expanded="true" />
+                <element signature="e#10458#10459#0" expanded="true" />
+                <element signature="e#10659#10660#0" expanded="true" />
+                <element signature="e#12569#12570#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1790,7 +1790,11 @@
       <created>1417533096996</created>
       <updated>1417533096996</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implementado o metodo de calculo das distancias entre dois pontos">
+      <created>1417613253179</created>
+      <updated>1417613253179</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1896,10 +1900,13 @@
     <MESSAGE value="Adicionado tela de envio de e-mail já funcionando" />
     <MESSAGE value="Modificações nos nomes dos arquivos" />
     <MESSAGE value="Adicionado tela de indique um amigo (funcionando)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionado tela de indique um amigo (funcionando)" />
+    <MESSAGE value="Implementado o metodo de calculo das distancias entre dois pontos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementado o metodo de calculo das distancias entre dois pontos" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_my.xml">
@@ -2320,18 +2327,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityMapa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.622905" vertical-offset="6271" max-vertical-offset="6732">
-          <caret line="392" column="66" selection-start-line="392" selection-start-column="66" selection-end-line="392" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.66201115" vertical-offset="5696" max-vertical-offset="7157">
+          <caret line="349" column="25" selection-start-line="349" selection-start-column="25" selection-end-line="349" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2276#2283#0" expanded="true" />
-            <element signature="e#3235#3468#0" expanded="true" />
-            <element signature="e#3457#3458#0" expanded="true" />
-            <element signature="e#3515#4478#0" expanded="true" />
-            <element signature="e#3729#3737#0" expanded="true" />
-            <element signature="e#4467#4468#0" expanded="true" />
-            <element signature="e#4521#5075#0" expanded="true" />
-            <element signature="e#5064#5065#0" expanded="true" />
+            <element signature="e#2330#2337#0" expanded="true" />
+            <element signature="e#3289#3522#0" expanded="true" />
+            <element signature="e#3511#3512#0" expanded="true" />
+            <element signature="e#3569#4542#0" expanded="true" />
+            <element signature="e#3789#3797#0" expanded="true" />
+            <element signature="e#4531#4532#0" expanded="true" />
+            <element signature="e#4585#5139#0" expanded="true" />
+            <element signature="e#5128#5129#0" expanded="true" />
+            <element signature="e#5889#5890#0" expanded="true" />
+            <element signature="e#5915#5916#0" expanded="true" />
+            <element signature="e#6422#6423#0" expanded="true" />
+            <element signature="e#6501#6502#0" expanded="true" />
+            <element signature="e#6561#6562#0" expanded="true" />
+            <element signature="e#6640#6641#0" expanded="true" />
+            <element signature="e#9139#10670#0" expanded="true" />
+            <element signature="e#10000#10481#0" expanded="true" />
+            <element signature="e#10458#10459#0" expanded="true" />
+            <element signature="e#10659#10660#0" expanded="true" />
+            <element signature="e#12569#12570#0" expanded="true" />
           </folding>
         </state>
       </provider>

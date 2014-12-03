@@ -32,6 +32,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.TileOverlay;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -64,7 +65,7 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
     private Polyline polyline;
     private List<LatLng> list;
     private static ArrayList<Ponto> marcadores = new ArrayList<Ponto>();
-    private DecimalFormat df = new DecimalFormat("#,##");
+    private DecimalFormat df = new DecimalFormat("0.00");
     private GeoCode geoCode = new GeoCode();
     private static Double lat,lon;
     private String endereco,bairro;
@@ -104,12 +105,16 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
             public void onClick(View view) {
                minhaLocalizacao = googleMap.getMyLocation();
 
-               ArrayList<Object> objeto = new ArrayList<Object>();
+               final ArrayList<Object> objeto = new ArrayList<Object>();
                objeto.add(endereco);
                objeto.add(minhaLocalizacao.getLatitude());
                objeto.add(minhaLocalizacao.getLongitude());
 
+
+
                new Distancia().execute(objeto);
+
+
 
                 //enderecoLatLong = GeoCode.getLatLong(endereco);
 
@@ -336,18 +341,27 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
 
     private class Distancia extends AsyncTask{
 
+
+
         @Override
         protected Object doInBackground(Object[] objects) {
+            final Double result = distancia(objects);
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(ActivityMapa.this, "Distancia(aproximada): "+df.format(result/1000)+" Km", Toast.LENGTH_LONG).show();
+                }
+            });
+           //distancia(objects);
+           return null;
 
-           distancia(objects);
-
-            return null;
         }
     }
 
 
-    public static void distancia(Object[] objects){
+    public double distancia(Object[] objects){
         ArrayList arrayList = (ArrayList) objects[0];
+        Double distancia = 0.0;
         //O endereço fica na posição 0 do arraylist
         //As posições latitude e longitude ficam respectivamente nas posições 1 e 2 do array list
 
@@ -389,12 +403,13 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
             LatLng ondeEstou = new LatLng(minhaLatitude,minhaLongitude);
             LatLng ondeEuVou = new LatLng(latitude,longitude);
 
-            Double distancia = GeoCode.distance(ondeEuVou,ondeEstou);
-            Log.e("DISTANCIA ENTRE OS PONTOS",distancia.toString());
+            distancia = GeoCode.distance(ondeEuVou,ondeEstou);
+            Log.e("DISTANCIA",distancia.toString());
 
 
         }catch(JSONException e){
             e.printStackTrace();
         }
+        return distancia;
     }
 }
