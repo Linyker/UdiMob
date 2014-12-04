@@ -1,9 +1,6 @@
 package pdsi2.udimob;
 
-import android.location.Location;
-import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -11,7 +8,6 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
@@ -22,7 +18,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by Linyker on 10/11/2014.
@@ -31,14 +26,9 @@ import java.util.Objects;
  */
 
 
-
-
-
 public class GeoCode {
 
     private static double latitude,longitute;
-
-
 
     public static LatLng getLocationInfo(String address) throws JSONException {
         StringBuilder stringBuilder = new StringBuilder();
@@ -145,49 +135,6 @@ public class GeoCode {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        /*
-        String url = "http://maps.google.com/maps/api/geocode/json?address="+arrayList.get(0).toString()+"&sensor=false";
-        url = url.replaceAll(" ","+");
-
-        HttpGet httpGet = new HttpGet(url);
-        HttpClient client = new DefaultHttpClient();
-        HttpResponse response;
-        StringBuilder stringBuilder = new StringBuilder();
-
-        try{
-            response = client.execute(httpGet);
-            HttpEntity entity = response.getEntity();
-            InputStream stream = entity.getContent();
-            int b;
-
-            while((b = stream.read()) != -1){
-                stringBuilder.append((char) b);
-            }
-        }catch(ClientProtocolException e){
-            e.printStackTrace();
-        }catch (IOException e1){
-            e1.printStackTrace();
-        }
-
-        JSONObject jsonObject;
-
-        try{
-            jsonObject = new JSONObject(stringBuilder.toString());
-
-            double longitude = ((JSONArray) jsonObject.get("results")).getJSONObject(0).getJSONObject("geometry").getJSONObject("location").getDouble("lng");
-            double latitude = ((JSONArray) jsonObject.get("results")).getJSONObject(0).getJSONObject("geometry").getJSONObject("location").getDouble("lat");
-//
-            LatLng ondeEstou = new LatLng(minhaLatitude,minhaLongitude);
-            LatLng ondeEuVou = new LatLng(latitude,longitude);
-
-            distancia = GeoCode.distance(ondeEuVou,ondeEstou);
-
-
-        }catch(JSONException e){
-            e.printStackTrace();
-        }
-        */
 
         return distancia;
     }

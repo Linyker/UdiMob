@@ -2,15 +2,9 @@ package pdsi2.udimob;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.location.Address;
-import android.location.Criteria;
-import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -32,30 +26,15 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-import com.google.android.gms.maps.model.TileOverlay;
 
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.lang.reflect.Array;
-import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 
 public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickListener{
@@ -64,13 +43,10 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
     private LatLng frameworkSystemLocation;
     private Polyline polyline;
     private List<LatLng> list;
-    private static ArrayList<Ponto> marcadores = new ArrayList<Ponto>();
     private DecimalFormat df = new DecimalFormat("0.00");
-    private GeoCode geoCode = new GeoCode();
     private static Double lat,lon;
     private String endereco,bairro;
     private static Location minhaLocalizacao;
-    private Location enderecoLatLong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,17 +85,17 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
 
                final ArrayList<Object> objeto = new ArrayList<Object>();
                objeto.add(endereco);
-               objeto.add(minhaLocalizacao.getLatitude());
-               objeto.add(minhaLocalizacao.getLongitude());
 
-               new Distancia().execute(objeto);
+                if(minhaLocalizacao != null) {
+                    objeto.add(minhaLocalizacao.getLatitude());
+                    objeto.add(minhaLocalizacao.getLongitude());
 
-               //enderecoLatLong = GeoCode.getLatLong(endereco);
+                    new Distancia().execute(objeto);
+                }else{
+                   Toast.makeText(getApplicationContext(),"Aguarde até aparecer sua localização",Toast.LENGTH_LONG).show();
+              }
 
-               //Toast.makeText(getApplicationContext(),enderecoLatLong.getLatitude()+" "+ enderecoLatLong.getLongitude(),Toast.LENGTH_LONG).show();
-               //Double distancia = geoCode.distance(p1,p2);
-               //geo.getLatLong("Alameda César Augusto Faria - Residencial Gramado, MG");
-               //Toast.makeText(ActivityMapa.this, "Distancia(aproximada): "+df.format(distancia/1000)+" Km", Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -136,21 +112,9 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
 
                 new TracarRota().execute(objeto);
 
-                /*
-                minhaLocalizacao = googleMap.getMyLocation();
-                LatLng origem = new LatLng(minhaLocalizacao.getLatitude(),minhaLocalizacao.getLongitude());
-                LatLng destino = new LatLng(-18.4868648,-47.4030649);
-                //Toast.makeText(getApplicationContext(),minhaLocalizacao.getLatitude()+" "+minhaLocalizacao.getLongitude(),Toast.LENGTH_LONG).show();
-
-                getRoute(origem, destino);*/
             }
         });
-
-
-
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -347,10 +311,10 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(ActivityMapa.this, "Distancia(aproximada): "+df.format(result/1000)+" Km", Toast.LENGTH_LONG).show();
-                }
+                        Toast.makeText(ActivityMapa.this, "Distancia(aproximada): " + df.format(result / 1000) + " Km", Toast.LENGTH_LONG).show();
+
+                    }
             });
-           //distancia(objects);
            return null;
 
         }

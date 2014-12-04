@@ -6,12 +6,16 @@ package pdsi2.udimob;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.app.Activity;
+import android.preference.DialogPreference;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.internal.ci;
 
@@ -31,9 +35,11 @@ public class ActivityImoveis extends Activity {
     String [] endereco;
     ArrayList<ObjImoveis> arraylist = new ArrayList<ObjImoveis>();
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        verificaConexao();
         setContentView(R.layout.imoveis);
 
         // Generate sample data
@@ -139,6 +145,36 @@ public class ActivityImoveis extends Activity {
                 // TODO Auto-generated method stub
             }
         });
+    }
+
+    public void verificaConexao(){
+        AlertDialog.Builder build = new AlertDialog.Builder(this);
+        DetectaConexao detecta = new DetectaConexao(getApplicationContext());
+        boolean conectado = detecta.verificaConexao();
+
+        if(conectado == false) {
+            build = new AlertDialog.Builder(ActivityImoveis.this);
+            build.setTitle("Conexão com a internet");
+            build.setMessage("Você não está conectado a internet, deseja prosseguir ?");
+            build.setPositiveButton(
+                    "Sim", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    }
+            );
+
+            build.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    finish();
+                }
+            });
+
+            AlertDialog alert = build.create();
+            alert.show();
+        }
     }
 }
 

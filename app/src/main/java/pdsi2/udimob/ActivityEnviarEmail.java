@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 /**
  * Created by Linyker on 01/12/2014.
@@ -22,7 +21,6 @@ public class ActivityEnviarEmail extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.enviar_email);
 
-        //editDe = (EditText) findViewById(R.id.editDe);
         editPara = (EditText) findViewById(R.id.editPara);
         editAssunto = (EditText) findViewById(R.id.editAssunto);
         editMensagem = (EditText) findViewById(R.id.editMensagem);
