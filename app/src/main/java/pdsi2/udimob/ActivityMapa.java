@@ -80,12 +80,14 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
         Intent i = getIntent();
         endereco = i.getStringExtra("endereco");
         bairro = i.getStringExtra("bairro");
+        final ArrayList<Object> objetoEndereco = new ArrayList<Object>();
+        objetoEndereco.add(endereco);
 
         createMapView();
 
         minhaLocalizacao();
         movimentarCamera(-18.9220717, -48.2635649);
-        adicionarMarcadores();
+        new AdicionarMarcador().execute(objetoEndereco);
 
         Button botao_distancia = (Button) findViewById(R.id.botao_distancia);
         Button botao_rota = (Button) findViewById(R.id.botao_rota);
@@ -110,18 +112,14 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
                objeto.add(minhaLocalizacao.getLatitude());
                objeto.add(minhaLocalizacao.getLongitude());
 
-
-
                new Distancia().execute(objeto);
 
+               //enderecoLatLong = GeoCode.getLatLong(endereco);
 
-
-                //enderecoLatLong = GeoCode.getLatLong(endereco);
-
-                //Toast.makeText(getApplicationContext(),enderecoLatLong.getLatitude()+" "+ enderecoLatLong.getLongitude(),Toast.LENGTH_LONG).show();
-                //Double distancia = geoCode.distance(p1,p2);
-                //geo.getLatLong("Alameda César Augusto Faria - Residencial Gramado, MG");
-                //Toast.makeText(ActivityMapa.this, "Distancia(aproximada): "+df.format(distancia/1000)+" Km", Toast.LENGTH_LONG).show();
+               //Toast.makeText(getApplicationContext(),enderecoLatLong.getLatitude()+" "+ enderecoLatLong.getLongitude(),Toast.LENGTH_LONG).show();
+               //Double distancia = geoCode.distance(p1,p2);
+               //geo.getLatLong("Alameda César Augusto Faria - Residencial Gramado, MG");
+               //Toast.makeText(ActivityMapa.this, "Distancia(aproximada): "+df.format(distancia/1000)+" Km", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -129,12 +127,17 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
         botao_rota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
+
+                /*
                 minhaLocalizacao = googleMap.getMyLocation();
                 LatLng origem = new LatLng(minhaLocalizacao.getLatitude(),minhaLocalizacao.getLongitude());
                 LatLng destino = new LatLng(-18.4868648,-47.4030649);
                 //Toast.makeText(getApplicationContext(),minhaLocalizacao.getLatitude()+" "+minhaLocalizacao.getLongitude(),Toast.LENGTH_LONG).show();
 
-                getRoute(origem, destino);
+                getRoute(origem, destino);*/
             }
         });
 
@@ -307,45 +310,28 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
         }.start();
     }
 
-    public void minhasCoordenadas(){
-        // Acquire a reference to the system Location Manager
-        LocationManager locationManager = (LocationManager) ActivityMapa.this.getSystemService(Context.LOCATION_SERVICE);
 
-        // Creating a criteria object to retrieve provider
-        Criteria criteria = new Criteria();
-
-        // Getting the name of the best provider
-        String provider = locationManager.getBestProvider(criteria, true);
-
-        LocationListener locationListener = new LocationListener() {
-
-            public void onLocationChanged(Location location) {
-                // Called when a new location is found by the network location provider.
-
-                lat = location.getLatitude();
-                lon = location.getLongitude();
-                LatLng latLng = new LatLng(lat,lon);
-                Toast.makeText(ActivityMapa.this, "Coordenadas: "+latLng, Toast.LENGTH_LONG).show();
-                //Log.e("Localizacao : ","Your Location is:" + lat + " " + lon);
-            }
-
-            public void onStatusChanged(String provider, int status, Bundle extras) {}
-            public void onProviderEnabled(String provider) {}
-            public void onProviderDisabled(String provider) {}
-        };
-
-        // Register the listener with the Location Manager to receive location updates
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-
-    }
-
-    private class Distancia extends AsyncTask{
-
-
+    private class AdicionarMarcador extends AsyncTask{
 
         @Override
         protected Object doInBackground(Object[] objects) {
-            final Double result = distancia(objects);
+            final LatLng posicao = GeoCode.adicionarMarcador(objects);
+            Log.e("AONDEMARCAR",posicao.toString());
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    googleMap.addMarker(new MarkerOptions().position(posicao).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                }
+            });
+
+            return null;
+        }
+    }
+
+    private class Distancia extends AsyncTask{
+    @Override
+        protected Object doInBackground(Object[] objects) {
+            final Double result = GeoCode.distancia(objects);
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -359,57 +345,5 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
     }
 
 
-    public double distancia(Object[] objects){
-        ArrayList arrayList = (ArrayList) objects[0];
-        Double distancia = 0.0;
-        //O endereço fica na posição 0 do arraylist
-        //As posições latitude e longitude ficam respectivamente nas posições 1 e 2 do array list
 
-        double minhaLatitude = Double.parseDouble(String.valueOf(arrayList.get(1)));
-        double minhaLongitude = Double.parseDouble(String.valueOf(arrayList.get(2)));
-
-        //pegando as coordenadas para calcular a distancia com a minha posição atual
-        String url = "http://maps.google.com/maps/api/geocode/json?address="+arrayList.get(0).toString()+"&sensor=false";
-        url = url.replaceAll(" ","+");
-
-        HttpGet httpGet = new HttpGet(url);
-        HttpClient client = new DefaultHttpClient();
-        HttpResponse response;
-        StringBuilder stringBuilder = new StringBuilder();
-
-        try{
-            response = client.execute(httpGet);
-            HttpEntity entity = response.getEntity();
-            InputStream stream = entity.getContent();
-            int b;
-
-            while((b = stream.read()) != -1){
-                stringBuilder.append((char) b);
-            }
-        }catch(ClientProtocolException e){
-            e.printStackTrace();
-        }catch (IOException e1){
-            e1.printStackTrace();
-        }
-
-        JSONObject jsonObject;
-
-        try{
-            jsonObject = new JSONObject(stringBuilder.toString());
-
-            double longitude = ((JSONArray) jsonObject.get("results")).getJSONObject(0).getJSONObject("geometry").getJSONObject("location").getDouble("lng");
-            double latitude = ((JSONArray) jsonObject.get("results")).getJSONObject(0).getJSONObject("geometry").getJSONObject("location").getDouble("lat");
-//
-            LatLng ondeEstou = new LatLng(minhaLatitude,minhaLongitude);
-            LatLng ondeEuVou = new LatLng(latitude,longitude);
-
-            distancia = GeoCode.distance(ondeEuVou,ondeEstou);
-            Log.e("DISTANCIA",distancia.toString());
-
-
-        }catch(JSONException e){
-            e.printStackTrace();
-        }
-        return distancia;
-    }
 }

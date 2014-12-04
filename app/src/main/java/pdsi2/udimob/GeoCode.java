@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Linyker on 10/11/2014.
@@ -39,15 +40,14 @@ public class GeoCode {
 
 
 
-    public static Location getLocationInfo(String address) throws JSONException {
+    public static LatLng getLocationInfo(String address) throws JSONException {
         StringBuilder stringBuilder = new StringBuilder();
-        Location location = null;
-
+        LatLng location = null;
         try {
-
-            address = address.replaceAll(" ","%20");
+            address = address.replaceAll(" ","+");
 
             HttpPost httppost = new HttpPost("http://maps.google.com/maps/api/geocode/json?address=" + address + "&sensor=false");
+
             HttpClient client = new DefaultHttpClient();
             HttpResponse response;
             stringBuilder = new StringBuilder();
@@ -79,13 +79,96 @@ public class GeoCode {
                 .getJSONObject("geometry").getJSONObject("location")
                 .getDouble("lat");
 
-        location.setLatitude(latitude);
-        location.setLongitude(longitute);
+
+        location = new LatLng(latitude,longitute);
+        //location.setLatitude(latitude);
+        //location.setLongitude(longitute);
 
         return location;
     }
 
+    public static LatLng adicionarMarcador(Object[] objects){
+        LatLng marcacao = null;
+        ArrayList arrayList = (ArrayList) objects[0];
 
+        try {
+            marcacao = getLocationInfo(arrayList.get(0).toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return marcacao;
+    }
+
+    public static double distancia(Object[] objects){
+        ArrayList arrayList = (ArrayList) objects[0];
+        Double distancia = 0.0;
+        //O endereço fica na posição 0 do arraylist
+        //As posições latitude e longitude ficam respectivamente nas posições 1 e 2 do array list
+
+        double minhaLatitude = Double.parseDouble(String.valueOf(arrayList.get(1)));
+        double minhaLongitude = Double.parseDouble(String.valueOf(arrayList.get(2)));
+
+        LatLng ondeEstou = new LatLng(minhaLatitude,minhaLongitude);
+        //LatLng ondeEuVou = new LatLng(latitude,longitude);
+        LatLng ondeEuVou;
+
+
+        //pegando as coordenadas para calcular a distancia com a minha posição atual
+
+        try {
+            ondeEuVou = getLocationInfo(arrayList.get(0).toString());
+            distancia = GeoCode.distance(ondeEuVou,ondeEstou);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        /*
+        String url = "http://maps.google.com/maps/api/geocode/json?address="+arrayList.get(0).toString()+"&sensor=false";
+        url = url.replaceAll(" ","+");
+
+        HttpGet httpGet = new HttpGet(url);
+        HttpClient client = new DefaultHttpClient();
+        HttpResponse response;
+        StringBuilder stringBuilder = new StringBuilder();
+
+        try{
+            response = client.execute(httpGet);
+            HttpEntity entity = response.getEntity();
+            InputStream stream = entity.getContent();
+            int b;
+
+            while((b = stream.read()) != -1){
+                stringBuilder.append((char) b);
+            }
+        }catch(ClientProtocolException e){
+            e.printStackTrace();
+        }catch (IOException e1){
+            e1.printStackTrace();
+        }
+
+        JSONObject jsonObject;
+
+        try{
+            jsonObject = new JSONObject(stringBuilder.toString());
+
+            double longitude = ((JSONArray) jsonObject.get("results")).getJSONObject(0).getJSONObject("geometry").getJSONObject("location").getDouble("lng");
+            double latitude = ((JSONArray) jsonObject.get("results")).getJSONObject(0).getJSONObject("geometry").getJSONObject("location").getDouble("lat");
+//
+            LatLng ondeEstou = new LatLng(minhaLatitude,minhaLongitude);
+            LatLng ondeEuVou = new LatLng(latitude,longitude);
+
+            distancia = GeoCode.distance(ondeEuVou,ondeEstou);
+
+
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
+        */
+
+        return distancia;
+    }
 
     public static double distance(LatLng StartP, LatLng EndP) {
         double lat1 = StartP.latitude;
