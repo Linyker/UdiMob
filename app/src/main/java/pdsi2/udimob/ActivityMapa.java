@@ -127,9 +127,14 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
         botao_rota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                minhaLocalizacao = googleMap.getMyLocation();
 
+                final ArrayList<Object> objeto = new ArrayList<Object>();
+                objeto.add(endereco);
+                objeto.add(minhaLocalizacao.getLatitude());
+                objeto.add(minhaLocalizacao.getLongitude());
 
-
+                new TracarRota().execute(objeto);
 
                 /*
                 minhaLocalizacao = googleMap.getMyLocation();
@@ -193,7 +198,6 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
 
     }
 
-
     private void minhaLocalizacao() {
 
         // Getting reference to the SupportMapFragment of activity_main.xml
@@ -204,7 +208,6 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
 
         // Enabling MyLocation Layer of Google Map
         googleMap.setMyLocationEnabled(true);
-
 
     }
     private void createMapView(){
@@ -231,15 +234,6 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
             Log.e("Erro no mapa", e.toString());
         }
     }
-
-    public static void adicionarMarcadores(){
-        for(int i=0; i< marcadores.size(); i++){
-            LatLng latLng = new LatLng(marcadores.get(i).getLatitude(),marcadores.get(i).getLongitude());
-            googleMap.addMarker(new MarkerOptions().position(latLng).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-        }
-    }
-
-
 
     /*----------------------------Traçar Rota---------------------------------------*/
 
@@ -311,16 +305,34 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
     }
 
 
+
     private class AdicionarMarcador extends AsyncTask{
 
         @Override
         protected Object doInBackground(Object[] objects) {
-            final LatLng posicao = GeoCode.adicionarMarcador(objects);
-            Log.e("AONDEMARCAR",posicao.toString());
+            final LatLng posicao = GeoCode.retornaCoordenadas(objects);
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     googleMap.addMarker(new MarkerOptions().position(posicao).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                }
+            });
+
+            return null;
+        }
+    }
+
+    private class TracarRota extends  AsyncTask{
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            final ArrayList<LatLng> dados = GeoCode.dadosParaTracarRota(objects);
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    getRoute(dados.get(0),dados.get(1));
                 }
             });
 

@@ -25,7 +25,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4734d017-235d-48f9-a5a5-f103db4aeaca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityMapa.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityMapa.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/GeoCode.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/GeoCode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -100,23 +99,26 @@
       <file leaf-file-name="ActivityMapa.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityMapa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9050279" vertical-offset="1189" max-vertical-offset="5797">
-              <caret line="89" column="54" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.5223464" vertical-offset="3927" max-vertical-offset="6001">
+              <caret line="249" column="43" selection-start-line="249" selection-start-column="43" selection-end-line="249" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2330#2337#0" expanded="true" />
                 <element signature="e#2950#2958#0" expanded="true" />
                 <element signature="e#3927#3935#0" expanded="true" />
-                <element signature="e#4714#5293#0" expanded="true" />
-                <element signature="e#5282#5283#0" expanded="true" />
-                <element signature="e#6043#6044#0" expanded="true" />
-                <element signature="e#6069#6070#0" expanded="true" />
-                <element signature="e#6576#6577#0" expanded="true" />
-                <element signature="e#6655#6656#0" expanded="true" />
-                <element signature="e#6715#6716#0" expanded="true" />
-                <element signature="e#6794#6795#0" expanded="true" />
-                <element signature="e#11126#11393#0" expanded="true" />
-                <element signature="e#11378#11379#0" expanded="true" />
+                <element signature="e#4714#5637#0" expanded="true" />
+                <element signature="e#4935#4943#0" expanded="true" />
+                <element signature="e#5626#5627#0" expanded="true" />
+                <element signature="e#6387#6388#0" expanded="true" />
+                <element signature="e#6413#6414#0" expanded="true" />
+                <element signature="e#6920#6921#0" expanded="true" />
+                <element signature="e#6999#7000#0" expanded="true" />
+                <element signature="e#7059#7060#0" expanded="true" />
+                <element signature="e#7138#7139#0" expanded="true" />
+                <element signature="e#11050#11317#0" expanded="true" />
+                <element signature="e#11302#11303#0" expanded="true" />
+                <element signature="e#11600#11767#0" expanded="true" />
+                <element signature="e#11752#11753#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,11 +127,12 @@
       <file leaf-file-name="GeoCode.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/GeoCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="3876">
-              <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+            <state vertical-scroll-proportion="-7.285714" vertical-offset="1360" max-vertical-offset="4250">
+              <caret line="114" column="37" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
               <folding>
-                <element signature="e#6140#6148#0" expanded="true" />
-                <element signature="e#7633#7641#0" expanded="true" />
+                <element signature="e#3135#3143#0" expanded="true" />
+                <element signature="e#6885#6893#0" expanded="true" />
+                <element signature="e#8378#8386#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1797,7 +1800,11 @@
       <created>1417616948954</created>
       <updated>1417616948954</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Adicionado o marcador no mapa">
+      <created>1417715167819</created>
+      <updated>1417715167819</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1905,7 +1912,8 @@
     <MESSAGE value="Adicionado tela de indique um amigo (funcionando)" />
     <MESSAGE value="Implementado o metodo de calculo das distancias entre dois pontos" />
     <MESSAGE value="Ajustes no método de calculo da distancia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajustes no método de calculo da distancia" />
+    <MESSAGE value="Adicionado o marcador no mapa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionado o marcador no mapa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2322,34 +2330,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/GeoCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="3876">
-          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+        <state vertical-scroll-proportion="-7.285714" vertical-offset="1360" max-vertical-offset="4250">
+          <caret line="114" column="37" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
           <folding>
-            <element signature="e#6140#6148#0" expanded="true" />
-            <element signature="e#7633#7641#0" expanded="true" />
+            <element signature="e#3135#3143#0" expanded="true" />
+            <element signature="e#6885#6893#0" expanded="true" />
+            <element signature="e#8378#8386#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ActivityMapa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9050279" vertical-offset="1189" max-vertical-offset="5797">
-          <caret line="89" column="54" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.5223464" vertical-offset="3927" max-vertical-offset="6001">
+          <caret line="249" column="43" selection-start-line="249" selection-start-column="43" selection-end-line="249" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2330#2337#0" expanded="true" />
             <element signature="e#2950#2958#0" expanded="true" />
             <element signature="e#3927#3935#0" expanded="true" />
-            <element signature="e#4714#5293#0" expanded="true" />
-            <element signature="e#5282#5283#0" expanded="true" />
-            <element signature="e#6043#6044#0" expanded="true" />
-            <element signature="e#6069#6070#0" expanded="true" />
-            <element signature="e#6576#6577#0" expanded="true" />
-            <element signature="e#6655#6656#0" expanded="true" />
-            <element signature="e#6715#6716#0" expanded="true" />
-            <element signature="e#6794#6795#0" expanded="true" />
-            <element signature="e#11126#11393#0" expanded="true" />
-            <element signature="e#11378#11379#0" expanded="true" />
+            <element signature="e#4714#5637#0" expanded="true" />
+            <element signature="e#4935#4943#0" expanded="true" />
+            <element signature="e#5626#5627#0" expanded="true" />
+            <element signature="e#6387#6388#0" expanded="true" />
+            <element signature="e#6413#6414#0" expanded="true" />
+            <element signature="e#6920#6921#0" expanded="true" />
+            <element signature="e#6999#7000#0" expanded="true" />
+            <element signature="e#7059#7060#0" expanded="true" />
+            <element signature="e#7138#7139#0" expanded="true" />
+            <element signature="e#11050#11317#0" expanded="true" />
+            <element signature="e#11302#11303#0" expanded="true" />
+            <element signature="e#11600#11767#0" expanded="true" />
+            <element signature="e#11752#11753#0" expanded="true" />
           </folding>
         </state>
       </provider>

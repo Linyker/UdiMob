@@ -87,17 +87,39 @@ public class GeoCode {
         return location;
     }
 
-    public static LatLng adicionarMarcador(Object[] objects){
-        LatLng marcacao = null;
+    public static LatLng retornaCoordenadas(Object[] objects){
+        LatLng coordenadas = null;
         ArrayList arrayList = (ArrayList) objects[0];
 
         try {
-            marcacao = getLocationInfo(arrayList.get(0).toString());
+            coordenadas = getLocationInfo(arrayList.get(0).toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        return marcacao;
+        return coordenadas;
+    }
+
+    public static ArrayList<LatLng> dadosParaTracarRota(Object[] objects){
+        ArrayList arrayList = (ArrayList) objects[0];
+        ArrayList<LatLng> dadosRota = new ArrayList<LatLng>();
+
+        double minhaLatitude = Double.parseDouble(String.valueOf(arrayList.get(1)));
+        double minhaLongitude = Double.parseDouble(String.valueOf(arrayList.get(2)));
+
+        LatLng ondeEstou = new LatLng(minhaLatitude,minhaLongitude);
+        LatLng ondeEuVou;
+        try {
+            ondeEuVou = getLocationInfo(arrayList.get(0).toString());
+
+            dadosRota.add(ondeEstou);
+            dadosRota.add(ondeEuVou);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return dadosRota;
     }
 
     public static double distancia(Object[] objects){
