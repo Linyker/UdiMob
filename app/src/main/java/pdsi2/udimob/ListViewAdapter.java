@@ -23,20 +23,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
+import pdsi2.udimob.dto.Imovel;
+
 public class ListViewAdapter extends BaseAdapter {
 
     // Declare Variables
     Context mContext;
     LayoutInflater inflater;
-    private List<ObjImoveis> imovel = null;
-    private ArrayList<ObjImoveis> arraylist;
+    private List<Imovel> imovel = null;
+    private ArrayList<Imovel> arraylist;
     Bitmap bitmap;
 
-    public ListViewAdapter(Context context,List<ObjImoveis> imovel) {
+    public ListViewAdapter(Context context,List<Imovel> imovel) {
         mContext = context;
         this.imovel = imovel;
         inflater = LayoutInflater.from(mContext);
-        this.arraylist = new ArrayList<ObjImoveis>();
+        this.arraylist = new ArrayList<Imovel>();
         this.arraylist.addAll(imovel);
     }
 
@@ -53,7 +55,7 @@ public class ListViewAdapter extends BaseAdapter {
     }
 
     @Override
-    public ObjImoveis getItem(int position) {
+    public Imovel getItem(int position) {
         return imovel.get(position);
     }
 
@@ -154,7 +156,7 @@ public class ListViewAdapter extends BaseAdapter {
         if (charText.length() == 0) {
             imovel.addAll(arraylist);
         } else {
-            for (ObjImoveis wp : arraylist) {
+            for (Imovel wp : arraylist) {
                 if (wp.getCidade().toLowerCase(Locale.getDefault())
                         .contains(charText)) {
                     imovel.add(wp);

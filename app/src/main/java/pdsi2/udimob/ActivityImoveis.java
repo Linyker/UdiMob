@@ -4,20 +4,20 @@ package pdsi2.udimob;
  * Created by Linyker on 17/11/2014.
  */
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.app.Activity;
-import android.preference.DialogPreference;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.google.android.gms.internal.ci;
+import pdsi2.udimob.conexao.ImovelRest;
+import pdsi2.udimob.dto.Imovel;
 
 public class ActivityImoveis extends Activity {
 
@@ -33,7 +33,7 @@ public class ActivityImoveis extends Activity {
     String [] email;
     String [] telefone;
     String [] endereco;
-    ArrayList<ObjImoveis> arraylist = new ArrayList<ObjImoveis>();
+    ArrayList<Imovel> arraylist = new ArrayList<Imovel>();
 
 
     @Override
@@ -103,13 +103,21 @@ public class ActivityImoveis extends Activity {
                 "(34) 3212-1234"
         };
 
-
         // Locate the ListView in listview_main.xml
         list = (ListView) findViewById(R.id.listview);
 
+        List<Imovel> imovels = new ArrayList<Imovel>();
+        ImovelRest imovelRest = new ImovelRest();
+
+        try {
+            imovels = imovelRest.getListaImovel();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         for (int i = 0; i < cidade.length; i++)
         {
-            ObjImoveis wp = new ObjImoveis(bairro[i],cidade[i],imagem_url[i],descricao[i],proprietario[i],email[i],telefone[i],endereco[i]);
+            Imovel wp = new Imovel(bairro[i],cidade[i],imagem_url[i],descricao[i],proprietario[i],email[i],telefone[i],endereco[i]);
             // Binds all strings into an array
             arraylist.add(wp);
         }
