@@ -15,8 +15,6 @@ public class Imovel {
     private String telefone;
     private String endereco;
 
-
-
     public Imovel(String bairro, String cidade, String imagem_url, String descricao, String proprietario, String email, String telefone, String endereco) {
         this.bairro = bairro;
         this.cidade = cidade;
