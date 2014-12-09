@@ -15,6 +15,13 @@ public class WebServiceCliente {
 
     public final String[] get(String url) {
 
+     new Thread(){
+         @Override
+         public void run() {
+             super.run();
+         }
+     }.start();
+
      String[] result = new String[2];
      HttpGet httpget = new HttpGet(url);
      HttpResponse response;
@@ -36,6 +43,10 @@ public class WebServiceCliente {
          result[1] = "Falha de rede!";
      }
      return result;
+
+
+
+
     }
 
     public final String[] post(String url, String json) {

@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -166,13 +167,19 @@ public class ListViewAdapter extends BaseAdapter {
     // Filter Class
     public void filter(String charText) {
         charText = charText.toLowerCase(Locale.getDefault());
+        Log.e("Caracteres",charText);
+        Log.e("Imoveis", String.valueOf(imovel.size()));
         imovel.clear();
         if (charText.length() == 0) {
             imovel.addAll(arraylist);
+            Log.e("Passo","1");
         } else {
+            Log.e("Passo","2");
+            Log.e("Imoveis2", String.valueOf(imovel.size()));
             for (Imovel wp : arraylist) {
                 if (wp.getBairro().toLowerCase(Locale.getDefault())
                         .contains(charText)) {
+
                     imovel.add(wp);
                 }
             }

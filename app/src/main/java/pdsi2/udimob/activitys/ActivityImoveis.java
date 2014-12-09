@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -52,24 +53,9 @@ public class ActivityImoveis extends Activity {
         verificaConexao();
         setContentView(R.layout.imoveis);
 
-        // Generate sample data
-        preco = new String[] { "10000.00", "20000.00", "30000.00", "40000.00", "50000.00", "40000.00", "30000.00", "70000.00", "25000.00", "50000.00" };
-
-        bairro = new String[] { "Brasil", "Centro", "Daniel Fonseca","Morada da Colina", "Centro", "Tibery", "Jardim das Palmeiras", "Brasil","Centro", "Cidade Jardim" };
-
-        usuario = new String[] {"1","2","3","4","5","6","7","8","9","10" };
-
+        // Locate the ListView in listview_main.xml
+        list = (ListView) findViewById(R.id.listview);
         nome = new String[] {"João","Maria","José","Marta","Joaquim","Fulano","Ciclano","Beltrano","Pedro","Marcos" };
-
-
-        logradouro = new String[] {"Avenida Cesário Alvim, 1331","Rua Rodolfo Correia, 470","Av Marcos de Freitas Costa, 1855","Av Rondon Pacheco, 3223","Avenida Getúlio Vargas, 1040","Avenida Espanha, 880","Avenida Dos Pássaros, 234","Avenida Mato Grosso, 694","Avenida Getúlio Vargas, 1040","Avenida Uirapuru, 961" };
-
-        numero = new String[] {"10","200","30","40","50","69","77","86","59","140"};
-
-        idImovel = new String[] {"1","2","3","4","5","6","7","8","9","10"};
-
-        tipoImovel = new String[] {"1","2","1","2","1","2","1","1","2","2"};
-
         imagem_url = new String[] {
                 "http://nrksuper.no/super/files/2014/05/android.jpeg",
                 "http://nrksuper.no/super/files/2014/05/android.jpeg",
@@ -81,19 +67,6 @@ public class ActivityImoveis extends Activity {
                 "http://nrksuper.no/super/files/2014/05/android.jpeg",
                 "http://nrksuper.no/super/files/2014/05/android.jpeg",
                 "http://nrksuper.no/super/files/2014/05/android.jpeg" };
-
-        descricaoImovel = new String[]{
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo"
-        };
 
         email = new String[]{
                 "linykerrm@gmail.com",
@@ -121,24 +94,27 @@ public class ActivityImoveis extends Activity {
                 "(34) 3212-1234"
         };
 
-        // Locate the ListView in listview_main.xml
-        list = (ListView) findViewById(R.id.listview);
+        new Thread(){
+            @Override
+            public void run() {
+                try {
+                    List<Imovel> imovels;
+                    final ImovelRest imovelRest = new ImovelRest();
 
-        List<Imovel> imovels = new ArrayList<Imovel>();
-        ImovelRest imovelRest = new ImovelRest();
+                    imovels = imovelRest.getListaImovel();
 
-        try {
-            imovels = imovelRest.getListaImovel();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+                    for (int i = 0; i < imovels.size(); i++)
+                    {
+                        Imovel wp = new Imovel(nome[i],imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(0).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),email[i],telefone[i],imagem_url[i]);
+                        // Binds all strings into an array
+                        arraylist.add(wp);
+                    }
 
-        for (int i = 0; i < bairro.length; i++)
-        {
-             Imovel wp = new Imovel(nome[i],Integer.parseInt(idImovel[i]),Integer.parseInt(tipoImovel[i]),Integer.parseInt(usuario[i]),logradouro[i],Integer.parseInt(numero[i]),bairro[i],descricaoImovel[i],Double.parseDouble(preco[i]),email[i],telefone[i],imagem_url[i]);
-            // Binds all strings into an array
-            arraylist.add(wp);
-        }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
 
         // Pass results to ListViewAdapter Class
         adapter = new ListViewAdapter(this, arraylist);
@@ -169,6 +145,7 @@ public class ActivityImoveis extends Activity {
             public void onTextChanged(CharSequence arg0, int arg1, int arg2,
                                       int arg3) {
                 // TODO Auto-generated method stub
+
             }
         });
     }
