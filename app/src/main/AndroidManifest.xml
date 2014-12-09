@@ -11,7 +11,7 @@
 
 
         <activity
-            android:name=".activity.ActivityImoveis"
+            android:name=".activitys.ActivityImoveis"
             android:label="UdiMob"
             >
             <intent-filter>
@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name=".activity.ActivityMapa"
+            android:name=".activitys.ActivityMapa"
             android:label="@string/app_name" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -40,7 +40,7 @@
         </activity>
 
         <activity
-            android:name=".activity.ActivityEnviarEmail"
+            android:name=".activitys.ActivityEnviarEmail"
             android:label="Enviar Email"
             android:screenOrientation="portrait"
             >
@@ -51,7 +51,7 @@
         </activity>
 
         <activity
-            android:name=".activity.ActivityIndicarAmigo"
+            android:name=".activitys.ActivityIndicarAmigo"
             android:label="Indicar para um amigo"
             android:screenOrientation="portrait"
             >

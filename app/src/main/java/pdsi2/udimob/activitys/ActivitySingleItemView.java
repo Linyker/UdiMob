@@ -24,9 +24,6 @@ import java.io.InputStream;
 import java.net.URL;
 
 import pdsi2.udimob.R;
-import pdsi2.udimob.activity.ActivityEnviarEmail;
-import pdsi2.udimob.activity.ActivityIndicarAmigo;
-import pdsi2.udimob.activity.ActivityMapa;
 
 public class ActivitySingleItemView extends Activity {
     // Declare Variables
