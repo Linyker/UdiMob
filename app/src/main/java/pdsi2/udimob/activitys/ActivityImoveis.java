@@ -30,14 +30,19 @@ public class ActivityImoveis extends Activity {
     ListView list;
     ListViewAdapter adapter;
     EditText editsearch;
-    String[] cidade;
+    String[] preco;
     String[] bairro;
-    String[] proprietario;
+    String[] usuario;
     String[] imagem_url;
-    String [] descricao;
+    String [] descricaoImovel;
     String [] email;
     String [] telefone;
-    String [] endereco;
+    String [] logradouro;
+    String[] idImovel;
+    String[] tipoImovel;
+    String[] numero;
+    String[] nome;
+
     ArrayList<Imovel> arraylist = new ArrayList<Imovel>();
 
 
@@ -48,14 +53,22 @@ public class ActivityImoveis extends Activity {
         setContentView(R.layout.imoveis);
 
         // Generate sample data
-        cidade = new String[] { "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia", "Uberlândia" };
+        preco = new String[] { "10000.00", "20000.00", "30000.00", "40000.00", "50000.00", "40000.00", "30000.00", "70000.00", "25000.00", "50000.00" };
 
         bairro = new String[] { "Brasil", "Centro", "Daniel Fonseca","Morada da Colina", "Centro", "Tibery", "Jardim das Palmeiras", "Brasil","Centro", "Cidade Jardim" };
 
-        proprietario = new String[] {"João","Maria","José","Marta","Joaquim","Fulano","Ciclano","Beltrano","Pedro","Marcos" };
+        usuario = new String[] {"1","2","3","4","5","6","7","8","9","10" };
 
-        endereco = new String[] {"Avenida Cesário Alvim, 1331","Rua Rodolfo Correia, 470","Av Marcos de Freitas Costa, 1855","Av Rondon Pacheco, 3223","Avenida Getúlio Vargas, 1040","Avenida Espanha, 880","Avenida Dos Pássaros, 234","Avenida Mato Grosso, 694","Avenida Getúlio Vargas, 1040","Avenida Uirapuru, 961" };
+        nome = new String[] {"João","Maria","José","Marta","Joaquim","Fulano","Ciclano","Beltrano","Pedro","Marcos" };
 
+
+        logradouro = new String[] {"Avenida Cesário Alvim, 1331","Rua Rodolfo Correia, 470","Av Marcos de Freitas Costa, 1855","Av Rondon Pacheco, 3223","Avenida Getúlio Vargas, 1040","Avenida Espanha, 880","Avenida Dos Pássaros, 234","Avenida Mato Grosso, 694","Avenida Getúlio Vargas, 1040","Avenida Uirapuru, 961" };
+
+        numero = new String[] {"10","200","30","40","50","69","77","86","59","140"};
+
+        idImovel = new String[] {"1","2","3","4","5","6","7","8","9","10"};
+
+        tipoImovel = new String[] {"1","2","1","2","1","2","1","1","2","2"};
 
         imagem_url = new String[] {
                 "http://nrksuper.no/super/files/2014/05/android.jpeg",
@@ -69,7 +82,7 @@ public class ActivityImoveis extends Activity {
                 "http://nrksuper.no/super/files/2014/05/android.jpeg",
                 "http://nrksuper.no/super/files/2014/05/android.jpeg" };
 
-        descricao = new String[]{
+        descricaoImovel = new String[]{
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu rutrum ex, vel sodales justo",
@@ -120,9 +133,9 @@ public class ActivityImoveis extends Activity {
             e.printStackTrace();
         }
 
-        for (int i = 0; i < cidade.length; i++)
+        for (int i = 0; i < bairro.length; i++)
         {
-            Imovel wp = new Imovel(bairro[i],cidade[i],imagem_url[i],descricao[i],proprietario[i],email[i],telefone[i],endereco[i]);
+             Imovel wp = new Imovel(nome[i],Integer.parseInt(idImovel[i]),Integer.parseInt(tipoImovel[i]),Integer.parseInt(usuario[i]),logradouro[i],Integer.parseInt(numero[i]),bairro[i],descricaoImovel[i],Double.parseDouble(preco[i]),email[i],telefone[i],imagem_url[i]);
             // Binds all strings into an array
             arraylist.add(wp);
         }

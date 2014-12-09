@@ -16,32 +16,32 @@
         android:layout_toRightOf="@+id/labelBairro" />
 
     <TextView
-        android:id="@+id/cidadelabel"
+        android:id="@+id/precolabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/labelBairro"
-        android:text="@string/cidade" />
+        android:text="@string/preco" />
 
     <TextView
-        android:id="@+id/cidade"
+        android:id="@+id/preco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bairro"
-        android:layout_toRightOf="@+id/cidadelabel" />
+        android:layout_toRightOf="@+id/precolabel" />
 
     <TextView
-        android:id="@+id/proprietariolabel"
+        android:id="@+id/tipoIMovelLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cidadelabel"
-        android:text="@string/proprietario" />
+        android:layout_below="@+id/precolabel"
+        android:text="Tipo do Imóvel :"/>
 
     <TextView
-        android:id="@+id/proprietario"
+        android:id="@+id/tipoImovel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cidade"
-        android:layout_toRightOf="@+id/cidadelabel" />
+        android:layout_below="@+id/preco"
+        android:layout_toRightOf="@+id/tipoIMovelLabel" />
 
     <ImageView
         android:id="@+id/imagem_imovel"

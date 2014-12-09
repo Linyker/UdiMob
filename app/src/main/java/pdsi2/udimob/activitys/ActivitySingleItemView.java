@@ -28,7 +28,7 @@ import pdsi2.udimob.R;
 public class ActivitySingleItemView extends Activity {
     // Declare Variables
     TextView txtbairro;
-    TextView txtcidade;
+    TextView txtpreco;
     TextView txtproprietario;
     TextView txtEmail;
     TextView txtTelefone;
@@ -36,7 +36,6 @@ public class ActivitySingleItemView extends Activity {
     TextView txtEndereco;
     ImageView imgflag;
     String bairro;
-    String cidade;
     String proprietario;
     String imagem_imovel;
     String telefone;
@@ -45,6 +44,7 @@ public class ActivitySingleItemView extends Activity {
     String endereco;
     Bitmap bitmap1;
     Button enviar_email,indicar_amigo,ver_mapa;
+    String preco;
 
     String[] imageIDs = {
             "http://4.bp.blogspot.com/-GvQv8Ro99To/UuazzmEP8wI/AAAAAAAAFhI/WoCOm3QhPvE/s1600/Fachada+Sobrado+Esquina+(8).jpg",
@@ -67,8 +67,6 @@ public class ActivitySingleItemView extends Activity {
         Intent i = getIntent();
         // Get the results of rank
         bairro = i.getStringExtra("bairro");
-        // Get the results of country
-        cidade = i.getStringExtra("cidade");
         // Get the results of population
         proprietario = i.getStringExtra("proprietario");
         // Get the results of flag
@@ -82,11 +80,12 @@ public class ActivitySingleItemView extends Activity {
 
         endereco = i.getStringExtra("endereco");
 
+        preco = i.getStringExtra("preco");
 
 
         // Locate the TextViews in singleitemview.xml
         txtbairro = (TextView) findViewById(R.id.bairro);
-        txtcidade = (TextView) findViewById(R.id.cidade);
+        txtpreco = (TextView) findViewById(R.id.preco);
         txtproprietario = (TextView) findViewById(R.id.proprietario);
         txtEmail = (TextView) findViewById(R.id.email);
         txtTelefone = (TextView) findViewById(R.id.telefone);
@@ -102,7 +101,7 @@ public class ActivitySingleItemView extends Activity {
 
         // Load the results into the TextViews
         txtbairro.setText(bairro);
-        txtcidade.setText(cidade);
+        txtpreco.setText(preco);
         txtproprietario.setText(proprietario);
         txtEmail.setText(email);
         txtTelefone.setText(telefone);
@@ -140,9 +139,6 @@ public class ActivitySingleItemView extends Activity {
 
         Gallery gallery = (Gallery) findViewById(R.id.gallery1);
         gallery.setAdapter(new ImageAdapter(this));
-
-
-
 
         enviar_email.setOnClickListener(new View.OnClickListener() {
             @Override

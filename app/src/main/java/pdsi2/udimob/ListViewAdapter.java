@@ -45,8 +45,8 @@ public class ListViewAdapter extends BaseAdapter {
 
     public class ViewHolder {
         TextView bairro;
-        TextView cidade;
-        TextView proprietario;
+        TextView preco;
+        TextView tipo_imovel;
         ImageView imagem_imovel;
     }
 
@@ -65,6 +65,19 @@ public class ListViewAdapter extends BaseAdapter {
         return position;
     }
 
+    public String tipo_imovel(int id){
+        String tipo = "";
+        switch (id){
+            case 1:
+                tipo = "Casa";
+            break;
+            case 2:
+                tipo = "Apartamento";
+            break;
+        }
+        return tipo;
+    }
+
     public View getView(final int position, View view, ViewGroup parent) {
         final ViewHolder holder;
         if (view == null) {
@@ -72,8 +85,8 @@ public class ListViewAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.lista_imoveis, null);
             // Locate the TextViews in listview_item.xml
             holder.bairro = (TextView) view.findViewById(R.id.bairro);
-            holder.cidade = (TextView) view.findViewById(R.id.cidade);
-            holder.proprietario = (TextView) view.findViewById(R.id.proprietario);
+            holder.preco = (TextView) view.findViewById(R.id.preco);
+            holder.tipo_imovel = (TextView) view.findViewById(R.id.tipoImovel);
             // Locate the ImageView in listview_item.xml
             holder.imagem_imovel = (ImageView) view.findViewById(R.id.imagem_imovel);
             view.setTag(holder);
@@ -82,8 +95,8 @@ public class ListViewAdapter extends BaseAdapter {
         }
         // Set the results into TextViews
         holder.bairro.setText(" " + imovel.get(position).getBairro());
-        holder.cidade.setText(" "+ imovel.get(position).getCidade());
-        holder.proprietario.setText(" "+ imovel.get(position).getProprietario());
+        holder.preco.setText(" "+ imovel.get(position).getPreco());
+        holder.tipo_imovel.setText(" "+ tipo_imovel(imovel.get(position).getTipoImovel()));
         // Set the results into ImageView
 
         new AsyncTask<Void,Void,Void>(){
@@ -120,13 +133,13 @@ public class ListViewAdapter extends BaseAdapter {
                 // Pass all data rank
                 intent.putExtra("bairro",
                         (imovel.get(position).getBairro()));
-                // Pass all data country
-                intent.putExtra("cidade",
-                        (imovel.get(position).getCidade()));
-                // Pass all data population
+
+                String preco1 = String.valueOf(imovel.get(position).getPreco());
+                intent.putExtra("preco",preco1);
+
                 intent.putExtra("proprietario",
-                        (imovel.get(position).getProprietario()));
-                // Pass all data flag
+                        (imovel.get(position).getNome()));
+
                 intent.putExtra("imagem_imovel",
                         (imovel.get(position).getImagem_url()));
 
@@ -134,13 +147,13 @@ public class ListViewAdapter extends BaseAdapter {
                         (imovel.get(position).getTelefone()));
 
                 intent.putExtra("descricao",
-                        (imovel.get(position).getDescricao()));
+                        (imovel.get(position).getDescricaoImovel()));
 
                 intent.putExtra("email",
                         (imovel.get(position).getEmail()));
 
                 intent.putExtra("endereco",
-                        (imovel.get(position).getEndereco()));
+                        (imovel.get(position).getLogradouro()));
 
                 // Start SingleItemView Class
                 mContext.startActivity(intent);
@@ -158,7 +171,7 @@ public class ListViewAdapter extends BaseAdapter {
             imovel.addAll(arraylist);
         } else {
             for (Imovel wp : arraylist) {
-                if (wp.getCidade().toLowerCase(Locale.getDefault())
+                if (wp.getBairro().toLowerCase(Locale.getDefault())
                         .contains(charText)) {
                     imovel.add(wp);
                 }

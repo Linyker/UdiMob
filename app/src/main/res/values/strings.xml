@@ -5,9 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="bairro">Bairro :</string>
-    <string name="cidade">Cidade :</string>
+    <string name="preco">Preço :</string>
     <string name="descricao">Descrição do Imóvel :</string>
-    <string name="proprietario">Dono :</string>
+    <string name="proprietario">Imobiliária :</string>
     <string name="email">E-mail : </string>
     <string name="telefone">Telefone : </string>
     <string name="endereco">Endereço : </string>
