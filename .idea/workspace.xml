@@ -22,10 +22,10 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: pdsi2.udimob" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4734d017-235d-48f9-a5a5-f103db4aeaca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/dto/Imovel.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/dto/Imovel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="4734d017-235d-48f9-a5a5-f103db4aeaca" name="Default" comment="criação do pacote activity">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivitySingleItemView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ListViewAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ListViewAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Udimob.iws" />
@@ -63,10 +63,10 @@
         </entry>
       </file>
       <file leaf-file-name="ActivitySingleItemView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activity/ActivitySingleItemView.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivitySingleItemView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="3621">
-              <caret line="55" column="92" selection-start-line="55" selection-start-column="92" selection-end-line="55" selection-end-column="92" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="3672">
+              <caret line="54" column="92" selection-start-line="54" selection-start-column="92" selection-end-line="54" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -85,7 +85,7 @@
       <file leaf-file-name="ActivityImoveis.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activity/ActivityImoveis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7705383" vertical-offset="2397" max-vertical-offset="3026">
+            <state vertical-scroll-proportion="7.5609064" vertical-offset="0" max-vertical-offset="3026">
               <caret line="176" column="48" selection-start-line="176" selection-start-column="48" selection-end-line="176" selection-end-column="48" />
               <folding>
                 <element signature="e#7103#7448#0" expanded="true" />
@@ -1458,6 +1458,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="activitys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Udimob" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UdiMob" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="udimob" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="activity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1756,7 +1790,11 @@
       <created>1417796991055</created>
       <updated>1417796991055</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Função verificar conexão com a internet modificada (não entra no app sem estar conectado)">
+      <created>1418130587922</created>
+      <updated>1418130587922</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1870,7 +1908,8 @@
     <MESSAGE value="Adicionado as classes de conexão com o servidor" />
     <MESSAGE value="Galeria de fotos implementada(imagens do tamanho 1200x800)" />
     <MESSAGE value="Função verificar conexão com a internet modificada (não entra no app sem estar conectado)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Função verificar conexão com a internet modificada (não entra no app sem estar conectado)" />
+    <MESSAGE value="criação do pacote activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="criação do pacote activity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2276,10 +2315,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activity/ActivitySingleItemView.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivitySingleItemView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="3621">
-          <caret line="55" column="92" selection-start-line="55" selection-start-column="92" selection-end-line="55" selection-end-column="92" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="3672">
+          <caret line="54" column="92" selection-start-line="54" selection-start-column="92" selection-end-line="54" selection-end-column="92" />
           <folding />
         </state>
       </provider>
@@ -2294,7 +2333,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activity/ActivityImoveis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7705383" vertical-offset="2397" max-vertical-offset="3026">
+        <state vertical-scroll-proportion="7.5609064" vertical-offset="0" max-vertical-offset="3026">
           <caret line="176" column="48" selection-start-line="176" selection-start-column="48" selection-end-line="176" selection-end-column="48" />
           <folding>
             <element signature="e#7103#7448#0" expanded="true" />

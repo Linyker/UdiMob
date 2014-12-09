@@ -23,7 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
-import pdsi2.udimob.activity.ActivitySingleItemView;
+import pdsi2.udimob.activitys.ActivitySingleItemView;
 import pdsi2.udimob.dto.Imovel;
 
 public class ListViewAdapter extends BaseAdapter {

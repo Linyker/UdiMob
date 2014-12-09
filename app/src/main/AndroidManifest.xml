@@ -30,7 +30,7 @@
         </activity>
 
         <activity
-            android:name=".activity.ActivitySingleItemView"
+            android:name=".activitys.ActivitySingleItemView"
             android:label="Imovel"
             >
             <intent-filter>
