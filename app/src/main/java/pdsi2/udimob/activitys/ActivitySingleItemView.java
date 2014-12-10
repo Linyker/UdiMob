@@ -52,11 +52,6 @@ public class ActivitySingleItemView extends Activity {
             "http://www.dicassobre.com.br/wp-content/uploads/2014/06/fachadas-de-casas-7.jpg"
     };
 
-    Integer[] imageIDs1 = {
-            R.drawable.casa1,
-            R.drawable.casa2
-
-    };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

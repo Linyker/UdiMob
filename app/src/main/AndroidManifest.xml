@@ -9,7 +9,6 @@
         android:theme="@style/AppTheme" >
 
 
-
         <activity
             android:name=".activitys.ActivityImoveis"
             android:label="UdiMob"

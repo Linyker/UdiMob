@@ -70,10 +70,10 @@ public class ListViewAdapter extends BaseAdapter {
         String tipo = "";
         switch (id){
             case 1:
-                tipo = "Casa";
+                tipo = "Venda";
             break;
             case 2:
-                tipo = "Apartamento";
+                tipo = "Aluguel";
             break;
         }
         return tipo;
@@ -106,8 +106,10 @@ public class ListViewAdapter extends BaseAdapter {
             protected Void doInBackground(Void... voids) {
 
                 try {
-                    InputStream in = new URL(imovel.get(position).getImagem_url()).openStream();
-                    bitmap = BitmapFactory.decodeStream(in);
+                    if(imovel.get(position) != null ) {
+                        InputStream in = new URL(imovel.get(position).getImagem_url()).openStream();
+                        bitmap = BitmapFactory.decodeStream(in);
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -122,7 +124,6 @@ public class ListViewAdapter extends BaseAdapter {
                 }
             }
         }.execute();
-
 
         // Listen for ListView Item Click
         view.setOnClickListener(new OnClickListener() {
@@ -154,7 +155,8 @@ public class ListViewAdapter extends BaseAdapter {
                         (imovel.get(position).getEmail()));
 
                 intent.putExtra("endereco",
-                        (imovel.get(position).getLogradouro()));
+                        (imovel.get(position).getLogradouro() + ","+imovel.get(position).getNumero()));
+                Log.e("ENDERECO",imovel.get(position).getLogradouro() + ","+imovel.get(position).getNumero());
 
                 // Start SingleItemView Class
                 mContext.startActivity(intent);

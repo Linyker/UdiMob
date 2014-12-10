@@ -17,6 +17,8 @@ import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -29,23 +31,17 @@ import pdsi2.udimob.dto.Imovel;
 public class ActivityImoveis extends Activity {
 
     // Declare Variables
-    ListView list;
-    ListViewAdapter adapter;
-    EditText editsearch;
-    String[] preco;
-    String[] bairro;
-    String[] usuario;
-    String[] imagem_url;
-    String [] descricaoImovel;
-    String [] email;
-    String [] telefone;
-    String [] logradouro;
-    String[] idImovel;
-    String[] tipoImovel;
-    String[] numero;
-    String[] nome;
+    private ListView list;
+    private ListViewAdapter adapter;
+    private EditText editsearch;
+    private Button botao_busca;
+    private String[] imagem_url;
+    private String [] email;
+    private String [] telefone;
+    private String[] nome;
 
     ArrayList<Imovel> arraylist = new ArrayList<Imovel>();
+    List<Imovel> imovel = new ArrayList<Imovel>();
 
 
     @Override
@@ -98,40 +94,80 @@ public class ActivityImoveis extends Activity {
 
 
         carregarImoveis();
-
         // Pass results to ListViewAdapter Class
         adapter = new ListViewAdapter(this, arraylist);
 
         // Binds the Adapter to the ListView
         list.setAdapter(adapter);
-
-        // Locate the EditText in listview_main.xml
-        editsearch = (EditText) findViewById(R.id.search);
-
-        // Capture Text in EditText
-        editsearch.addTextChangedListener(new TextWatcher() {
-
+        editsearch = (EditText) findViewById(R.id.edit_buscar);
+        botao_busca = (Button) findViewById(R.id.botao_buscar);
+        botao_busca.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void afterTextChanged(Editable arg0) {
-                // TODO Auto-generated method stub
-                String text = editsearch.getText().toString().toLowerCase(Locale.getDefault());
-                adapter.filter(text);
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence arg0, int arg1,
-                                          int arg2, int arg3) {
-                // TODO Auto-generated method stub
-            }
-
-            @Override
-            public void onTextChanged(CharSequence arg0, int arg1, int arg2,
-                                      int arg3) {
-                // TODO Auto-generated method stub
-
+            public void onClick(View view) {
+                buscaImovel();
             }
         });
     }
+
+
+
+    public void buscaImovel(){
+        List<Imovel> original = new ArrayList<Imovel>();
+        original.addAll(arraylist);
+        String busca = editsearch.getText().toString().toLowerCase(Locale.getDefault());
+        arraylist.clear();
+        if(busca.length() == 0){
+            Log.e("BUSCA","SEM ALTERAÇÃO");
+            arraylist.addAll(original);
+
+            // Pass results to ListViewAdapter Class
+            adapter = new ListViewAdapter(this, arraylist);
+
+            // Binds the Adapter to the ListView
+            list.setAdapter(adapter);
+
+        }else{
+            arraylist.clear();
+
+        }
+
+    }
+
+
+
+    public void carregarImoveis(){
+
+        final ProgressDialog ringProgressDialog = ProgressDialog.show(ActivityImoveis.this, "Aguarde", "Carregando Imóveis", true);
+
+        ringProgressDialog.setCancelable(true);
+
+        new Thread(){
+            @Override
+            public void run() {
+                try {
+                    List<Imovel> imovels;
+                    final ImovelRest imovelRest = new ImovelRest();
+
+                    imovels = imovelRest.getListaImovel();
+
+                    for (int i = 0; i < imovels.size(); i++)
+                    {
+                        Imovel wp = new Imovel(nome[i],imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),email[i],telefone[i],imagem_url[i]);
+                        // Binds all strings into an array
+                        arraylist.add(wp);
+                    }
+
+                    // Pass results to ListViewAdapter Class
+                    adapter = new ListViewAdapter(ActivityImoveis.this, arraylist);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                ringProgressDialog.dismiss();
+            }
+        }.start();
+    }
+
 
     public void verificaConexao(){
         AlertDialog.Builder build = new AlertDialog.Builder(this);
@@ -164,34 +200,5 @@ public class ActivityImoveis extends Activity {
         }
     }
 
-    public void carregarImoveis(){
-
-        final ProgressDialog ringProgressDialog = ProgressDialog.show(ActivityImoveis.this, "Aguarde", "Carregando Imóveis", true);
-
-        ringProgressDialog.setCancelable(true);
-
-        new Thread(){
-            @Override
-            public void run() {
-                try {
-                    List<Imovel> imovels;
-                    final ImovelRest imovelRest = new ImovelRest();
-
-                    imovels = imovelRest.getListaImovel();
-
-                    for (int i = 0; i < imovels.size(); i++)
-                    {
-                        Imovel wp = new Imovel(nome[i],imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(0).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),email[i],telefone[i],imagem_url[i]);
-                        // Binds all strings into an array
-                        arraylist.add(wp);
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                ringProgressDialog.dismiss();
-            }
-        }.start();
-    }
 }
 

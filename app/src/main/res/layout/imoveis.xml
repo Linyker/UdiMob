@@ -3,18 +3,33 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <EditText
-        android:id="@+id/search"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
 
-        <requestFocus />
-    </EditText>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_buscar"
+        android:layout_toStartOf="@+id/botao_buscar"
+        android:layout_marginTop="8dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:id="@+id/botao_buscar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 
     <ListView
         android:id="@+id/listview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/search" />
+        android:layout_below="@id/edit_buscar"
+        android:layout_marginTop="20dp"
+       />
+
+
+
+
 
 </RelativeLayout>
