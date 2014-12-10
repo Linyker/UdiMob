@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Locale;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -94,27 +95,9 @@ public class ActivityImoveis extends Activity {
                 "(34) 3212-1234"
         };
 
-        new Thread(){
-            @Override
-            public void run() {
-                try {
-                    List<Imovel> imovels;
-                    final ImovelRest imovelRest = new ImovelRest();
 
-                    imovels = imovelRest.getListaImovel();
 
-                    for (int i = 0; i < imovels.size(); i++)
-                    {
-                        Imovel wp = new Imovel(nome[i],imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(0).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),email[i],telefone[i],imagem_url[i]);
-                        // Binds all strings into an array
-                        arraylist.add(wp);
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }.start();
+        carregarImoveis();
 
         // Pass results to ListViewAdapter Class
         adapter = new ListViewAdapter(this, arraylist);
@@ -179,6 +162,36 @@ public class ActivityImoveis extends Activity {
             AlertDialog alert = build.create();
             alert.show();
         }
+    }
+
+    public void carregarImoveis(){
+
+        final ProgressDialog ringProgressDialog = ProgressDialog.show(ActivityImoveis.this, "Aguarde", "Carregando Imóveis", true);
+
+        ringProgressDialog.setCancelable(true);
+
+        new Thread(){
+            @Override
+            public void run() {
+                try {
+                    List<Imovel> imovels;
+                    final ImovelRest imovelRest = new ImovelRest();
+
+                    imovels = imovelRest.getListaImovel();
+
+                    for (int i = 0; i < imovels.size(); i++)
+                    {
+                        Imovel wp = new Imovel(nome[i],imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(0).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),email[i],telefone[i],imagem_url[i]);
+                        // Binds all strings into an array
+                        arraylist.add(wp);
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                ringProgressDialog.dismiss();
+            }
+        }.start();
     }
 }
 
