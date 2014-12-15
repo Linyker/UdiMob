@@ -34,6 +34,7 @@ public class ListViewAdapter extends BaseAdapter {
     LayoutInflater inflater;
     private List<Imovel> imovel = null;
     private ArrayList<Imovel> arraylist;
+
     Bitmap bitmap;
 
     public ListViewAdapter(Context context,List<Imovel> imovel) {
@@ -100,31 +101,32 @@ public class ListViewAdapter extends BaseAdapter {
         holder.tipo_imovel.setText(" "+ tipo_imovel(imovel.get(position).getTipoImovel()));
         // Set the results into ImageView
 
-        new AsyncTask<Void,Void,Void>(){
+        if(imovel.get(position) != null ) {
+            new AsyncTask<Void, Void, Void>() {
 
-            @Override
-            protected Void doInBackground(Void... voids) {
+                @Override
+                protected Void doInBackground(Void... voids) {
 
-                try {
-                    if(imovel.get(position) != null ) {
+                    try {
+
                         InputStream in = new URL(imovel.get(position).getImagem_url()).openStream();
                         bitmap = BitmapFactory.decodeStream(in);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    return null;
+
                 }
-                return null;
 
-            }
-
-            @Override
-            protected void onPostExecute(Void aVoid) {
-                if(bitmap != null) {
-                    holder.imagem_imovel.setImageBitmap(bitmap);
+                @Override
+                protected void onPostExecute(Void aVoid) {
+                    if (bitmap != null) {
+                        holder.imagem_imovel.setImageBitmap(bitmap);
+                    }
                 }
-            }
-        }.execute();
-
+            }.execute();
+        }
         // Listen for ListView Item Click
         view.setOnClickListener(new OnClickListener() {
 
@@ -166,8 +168,12 @@ public class ListViewAdapter extends BaseAdapter {
         return view;
     }
 
+
+
     // Filter Class
     public void filter(String charText) {
+
+
         charText = charText.toLowerCase(Locale.getDefault());
         Log.e("Caracteres",charText);
         Log.e("Imoveis", String.valueOf(imovel.size()));
@@ -188,6 +194,8 @@ public class ListViewAdapter extends BaseAdapter {
         }
         notifyDataSetChanged();
     }
+
+
 
 }
 

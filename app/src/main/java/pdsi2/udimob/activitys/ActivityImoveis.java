@@ -39,7 +39,7 @@ public class ActivityImoveis extends Activity {
     private String [] email;
     private String [] telefone;
     private String[] nome;
-
+    List<Imovel> original;
     ArrayList<Imovel> arraylist = new ArrayList<Imovel>();
     List<Imovel> imovel = new ArrayList<Imovel>();
 
@@ -97,41 +97,41 @@ public class ActivityImoveis extends Activity {
         // Pass results to ListViewAdapter Class
         adapter = new ListViewAdapter(this, arraylist);
 
+        original = new ArrayList<Imovel>();
+        original.addAll(arraylist);
+
         // Binds the Adapter to the ListView
         list.setAdapter(adapter);
         editsearch = (EditText) findViewById(R.id.edit_buscar);
-        botao_busca = (Button) findViewById(R.id.botao_buscar);
-        botao_busca.setOnClickListener(new View.OnClickListener() {
+
+
+        editsearch.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View view) {
-                buscaImovel();
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                new Thread(){
+                    @Override
+                    public void run() {
+                        String texto = editsearch.getText().toString().toLowerCase(Locale.getDefault());
+                        adapter.filter(texto);
+                    }
+                }.start();
+
+
             }
         });
     }
 
 
-
-    public void buscaImovel(){
-        List<Imovel> original = new ArrayList<Imovel>();
-        original.addAll(arraylist);
-        String busca = editsearch.getText().toString().toLowerCase(Locale.getDefault());
-        arraylist.clear();
-        if(busca.length() == 0){
-            Log.e("BUSCA","SEM ALTERAÇÃO");
-            arraylist.addAll(original);
-
-            // Pass results to ListViewAdapter Class
-            adapter = new ListViewAdapter(this, arraylist);
-
-            // Binds the Adapter to the ListView
-            list.setAdapter(adapter);
-
-        }else{
-            arraylist.clear();
-
-        }
-
-    }
 
 
 
@@ -199,6 +199,7 @@ public class ActivityImoveis extends Activity {
             alert.show();
         }
     }
+
 
 }
 

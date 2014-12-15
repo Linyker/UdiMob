@@ -8,17 +8,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edit_buscar"
-        android:layout_toStartOf="@+id/botao_buscar"
         android:layout_marginTop="8dp"
+        android:hint="Entre com o bairro para buscar"
         />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buscar"
-        android:id="@+id/botao_buscar"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
 
     <ListView
         android:id="@+id/listview"
