@@ -1,4 +1,4 @@
-package pdsi2.udimob;
+package pdsi2.udimob.classes;
 
 /**
  * Created by Linyker on 17/11/2014.
@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
+import pdsi2.udimob.R;
 import pdsi2.udimob.activitys.ActivitySingleItemView;
 import pdsi2.udimob.dto.Imovel;
 

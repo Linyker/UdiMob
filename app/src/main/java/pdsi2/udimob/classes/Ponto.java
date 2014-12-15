@@ -1,4 +1,4 @@
-package pdsi2.udimob;
+package pdsi2.udimob.classes;
 
 /**
  * Created by Linyker on 06/11/2014.

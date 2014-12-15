@@ -36,7 +36,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import pdsi2.udimob.GeoCode;
+import pdsi2.udimob.classes.GeoCode;
 import pdsi2.udimob.R;
 
 

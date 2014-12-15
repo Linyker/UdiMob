@@ -1,4 +1,4 @@
-package pdsi2.udimob;
+package pdsi2.udimob.classes;
 
 import android.util.Log;
 

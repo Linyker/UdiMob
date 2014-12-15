@@ -16,14 +16,12 @@ import android.app.Activity;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import pdsi2.udimob.DetectaConexao;
-import pdsi2.udimob.ListViewAdapter;
+import pdsi2.udimob.classes.DetectaConexao;
+import pdsi2.udimob.classes.ListViewAdapter;
 import pdsi2.udimob.R;
 import pdsi2.udimob.conexao.ImovelRest;
 import pdsi2.udimob.dto.Imovel;

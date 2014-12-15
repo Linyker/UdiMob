@@ -22,12 +22,13 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: pdsi2.udimob" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4734d017-235d-48f9-a5a5-f103db4aeaca" name="Default" comment="Ajustes Gerais">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/Funcoes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
+    <list default="true" id="4734d017-235d-48f9-a5a5-f103db4aeaca" name="Default" comment="">
+      <change type="MOVED" beforePath="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\src\main\java\pdsi2\udimob\DetectaConexao.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/DetectaConexao.java" />
+      <change type="MOVED" beforePath="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\src\main\java\pdsi2\udimob\GeoCode.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/GeoCode.java" />
+      <change type="MOVED" beforePath="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\src\main\java\pdsi2\udimob\ListViewAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/ListViewAdapter.java" />
+      <change type="MOVED" beforePath="C:\Users\Linyker\AndroidStudioProjects\UdiMob\app\src\main\java\pdsi2\udimob\Ponto.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/Ponto.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityImoveis.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityImoveis.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ListViewAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ListViewAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/imoveis.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/imoveis.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityMapa.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityMapa.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Udimob.iws" />
@@ -87,32 +88,32 @@
       <file leaf-file-name="ActivityImoveis.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityImoveis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.5" vertical-offset="1730" max-vertical-offset="3587">
-              <caret line="124" column="46" selection-start-line="124" selection-start-column="46" selection-end-line="124" selection-end-column="46" />
+            <state vertical-scroll-proportion="-13.5" vertical-offset="1696" max-vertical-offset="3553">
+              <caret line="122" column="46" selection-start-line="122" selection-start-column="46" selection-end-line="122" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1209#1217#0" expanded="true" />
-                <element signature="e#3979#4254#0" expanded="true" />
-                <element signature="e#4235#4236#0" expanded="true" />
-                <element signature="e#4529#5639#0" expanded="true" />
-                <element signature="e#5628#5629#0" expanded="true" />
-                <element signature="e#6203#6548#0" expanded="true" />
-                <element signature="e#6525#6526#0" expanded="true" />
-                <element signature="e#6608#6813#0" expanded="true" />
-                <element signature="e#6798#6799#0" expanded="true" />
+                <element signature="e#1174#1182#0" expanded="true" />
+                <element signature="e#3944#4219#0" expanded="true" />
+                <element signature="e#4200#4201#0" expanded="true" />
+                <element signature="e#4494#5604#0" expanded="true" />
+                <element signature="e#5593#5594#0" expanded="true" />
+                <element signature="e#6168#6513#0" expanded="true" />
+                <element signature="e#6490#6491#0" expanded="true" />
+                <element signature="e#6573#6778#0" expanded="true" />
+                <element signature="e#6763#6764#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ListViewAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ListViewAdapter.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/ListViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="1255" max-vertical-offset="3043">
-              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
               <folding>
-                <element signature="e#3892#5338#0" expanded="true" />
-                <element signature="e#5327#5328#0" expanded="true" />
+                <element signature="e#3923#5369#0" expanded="true" />
+                <element signature="e#5358#5359#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1899,7 +1900,11 @@
       <created>1418249479672</created>
       <updated>1418249479672</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Criado pacote Classes e e classe Função">
+      <created>1418683365857</created>
+      <updated>1418683365857</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1946,7 +1951,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24130106" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24130106" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -2020,7 +2025,8 @@
     <MESSAGE value="Buscando os dados do Json" />
     <MESSAGE value="Criado método para carregar imóveis" />
     <MESSAGE value="Ajustes Gerais" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajustes Gerais" />
+    <MESSAGE value="Criado pacote Classes e e classe Função" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criado pacote Classes e e classe Função" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2028,18 +2034,18 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ListViewAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/ListViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3162" max-vertical-offset="3383">
           <caret line="186" column="13" selection-start-line="180" selection-start-column="12" selection-end-line="186" selection-end-column="13" />
           <folding>
-            <element signature="e#3892#5338#0" expanded="true" />
-            <element signature="e#5327#5328#0" expanded="true" />
+            <element signature="e#3923#5369#0" expanded="true" />
+            <element signature="e#5358#5359#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/GeoCode.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/GeoCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="1258">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
@@ -2072,7 +2078,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/Ponto.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/Ponto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="612">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
@@ -2270,7 +2276,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/DetectaConexao.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/DetectaConexao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.030411448" vertical-offset="187" max-vertical-offset="782">
           <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
@@ -2292,7 +2298,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/Ponto.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/Ponto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.92896175" vertical-offset="0" max-vertical-offset="510">
           <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
@@ -2307,7 +2313,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/GeoCode.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/GeoCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="3434">
           <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
@@ -2425,30 +2431,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityImoveis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.5" vertical-offset="1730" max-vertical-offset="3587">
-          <caret line="124" column="46" selection-start-line="124" selection-start-column="46" selection-end-line="124" selection-end-column="46" />
+        <state vertical-scroll-proportion="-13.5" vertical-offset="1696" max-vertical-offset="3553">
+          <caret line="122" column="46" selection-start-line="122" selection-start-column="46" selection-end-line="122" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1209#1217#0" expanded="true" />
-            <element signature="e#3979#4254#0" expanded="true" />
-            <element signature="e#4235#4236#0" expanded="true" />
-            <element signature="e#4529#5639#0" expanded="true" />
-            <element signature="e#5628#5629#0" expanded="true" />
-            <element signature="e#6203#6548#0" expanded="true" />
-            <element signature="e#6525#6526#0" expanded="true" />
-            <element signature="e#6608#6813#0" expanded="true" />
-            <element signature="e#6798#6799#0" expanded="true" />
+            <element signature="e#1174#1182#0" expanded="true" />
+            <element signature="e#3944#4219#0" expanded="true" />
+            <element signature="e#4200#4201#0" expanded="true" />
+            <element signature="e#4494#5604#0" expanded="true" />
+            <element signature="e#5593#5594#0" expanded="true" />
+            <element signature="e#6168#6513#0" expanded="true" />
+            <element signature="e#6490#6491#0" expanded="true" />
+            <element signature="e#6573#6778#0" expanded="true" />
+            <element signature="e#6763#6764#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/ListViewAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/ListViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1255" max-vertical-offset="3043">
-          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
-            <element signature="e#3892#5338#0" expanded="true" />
-            <element signature="e#5327#5328#0" expanded="true" />
+            <element signature="e#3923#5369#0" expanded="true" />
+            <element signature="e#5358#5359#0" expanded="true" />
           </folding>
         </state>
       </provider>
