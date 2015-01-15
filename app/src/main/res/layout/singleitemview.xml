@@ -3,13 +3,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="10"
+    android:weightSum="20"
     >
     <LinearLayout
-        android:layout_height="fill_parent"
-        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_weight="6"
+        android:layout_weight="10"
         >
 
         <Gallery
@@ -26,7 +26,7 @@
     <RelativeLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_weight="4"
+        android:layout_weight="10"
         android:background="@android:color/darker_gray"
         >
 
@@ -133,31 +133,37 @@
             android:layout_toRightOf="@id/descricaolabel"
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enviar e-mail"
-            android:id="@+id/botao_enviar_email"
-            android:layout_toEndOf="@+id/proprietariolabel"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Indicar amigo"
-            android:id="@+id/botao_indicar_amigo"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ver Mapa"
-            android:id="@+id/botao_ver_mapa"
-            android:layout_toStartOf="@+id/botao_indicar_amigo"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/botao_enviar_email" />
+
+
+
+
 
     </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark"
+    >
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/menu"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/informacao"
+            android:text="ACESSE O BOTÃO MENU DO CELULAR PARA VER AS OPÇÕES COMO NA IMAGEM AO LADO"
+            android:textColor="@android:color/secondary_text_dark_nodisable"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_weight="10" />
+    </LinearLayout>
 </LinearLayout>

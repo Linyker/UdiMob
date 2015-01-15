@@ -11,6 +11,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -18,6 +22,7 @@ import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,12 +51,65 @@ public class ActivitySingleItemView extends Activity {
     Button enviar_email,indicar_amigo,ver_mapa;
     String preco;
 
+    private static final int MAPA = 0;
+    private static final int EMAIL = 1;
+    private static final int IMOVEIS = 2;
+
+    private static final int VER_MAPA = Menu.FIRST;
+    private static final int ENVIAR_EMAIL = VER_MAPA + 1;
+    private static final int INDICAR_AMIGO = ENVIAR_EMAIL + 1;
+    private static final int VER_IMOVEIS = INDICAR_AMIGO + 1;
+
+
     String[] imageIDs = {
             "http://4.bp.blogspot.com/-GvQv8Ro99To/UuazzmEP8wI/AAAAAAAAFhI/WoCOm3QhPvE/s1600/Fachada+Sobrado+Esquina+(8).jpg",
             "http://4.bp.blogspot.com/-fIdnEg5hnrI/UuedmjDFG3I/AAAAAAAAFl0/Gl3gsPqSWgI/s1600/Fachada+Sobrado+Esquina+%25286%2529.jpg",
             "http://www.dicassobre.com.br/wp-content/uploads/2014/06/fachadas-de-casas-7.jpg"
     };
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        SubMenu mapa = menu.addSubMenu("Mapa");
+        SubMenu email = menu.addSubMenu("Email");
+        SubMenu imoveis = menu.addSubMenu("Imóveis");
+
+        mapa.setIcon(R.drawable.iconmap);
+        mapa.add(MAPA, VER_MAPA, 0, "Ver imóvel no mapa");
+        email.add(EMAIL, ENVIAR_EMAIL, 1, "Enviar email para o proprietário");
+        email.add(EMAIL, INDICAR_AMIGO, 0, "Indicar imóvel para um amigo");
+        imoveis.add(IMOVEIS, VER_IMOVEIS, 0, "Voltar para a lista de imóveis");
+
+
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case VER_MAPA:
+                showMsg("New");
+                break;
+            case ENVIAR_EMAIL:
+                showMsg("Save");
+                break;
+            case INDICAR_AMIGO:
+                showMsg("Undo");
+                break;
+            case VER_IMOVEIS:
+                showMsg("Redo");
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showMsg(String message) {
+        Toast msg = Toast.makeText(ActivitySingleItemView.this, message, Toast.LENGTH_LONG);
+        msg.setGravity(Gravity.CENTER, msg.getXOffset() / 2,
+                msg.getYOffset() / 2);
+        msg.show();
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,9 +145,9 @@ public class ActivitySingleItemView extends Activity {
         txtDescricao = (TextView) findViewById(R.id.descricao);
         txtEndereco = (TextView) findViewById(R.id.endereco);
 
-        enviar_email = (Button) findViewById(R.id.botao_enviar_email);
-        indicar_amigo = (Button) findViewById(R.id.botao_indicar_amigo);
-        ver_mapa = (Button) findViewById(R.id.botao_ver_mapa);
+       // enviar_email = (Button) findViewById(R.id.botao_enviar_email);
+        //indicar_amigo = (Button) findViewById(R.id.botao_indicar_amigo);
+        //ver_mapa = (Button) findViewById(R.id.botao_ver_mapa);
 
         // Locate the ImageView in singleitemview.xml
       //  imgflag = (ImageView) findViewById(R.id.flag);
@@ -134,7 +192,7 @@ public class ActivitySingleItemView extends Activity {
 
         Gallery gallery = (Gallery) findViewById(R.id.gallery1);
         gallery.setAdapter(new ImageAdapter(this));
-
+        /*
         enviar_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,7 +226,7 @@ public class ActivitySingleItemView extends Activity {
                 startActivity(i);
             }
         });
-
+        */
     }
 
     public class ImageAdapter extends BaseAdapter
