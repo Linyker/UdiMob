@@ -1,7 +1,5 @@
 package pdsi2.udimob.conexao;
 
-import android.app.ProgressDialog;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;

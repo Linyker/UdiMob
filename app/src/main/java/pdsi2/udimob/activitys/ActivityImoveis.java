@@ -16,6 +16,8 @@ import android.app.Activity;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -31,16 +33,17 @@ public class ActivityImoveis extends Activity {
     // Declare Variables
     private ListView list;
     private ListViewAdapter adapter;
-    private EditText editsearch;
+    //private EditText editsearch;
+    private AutoCompleteTextView editsearch;
     private Button botao_busca;
     private String[] imagem_url;
     private String [] email;
     private String [] telefone;
     private String[] nome;
-    List<Imovel> original;
-    ArrayList<Imovel> arraylist = new ArrayList<Imovel>();
-    List<Imovel> imovel = new ArrayList<Imovel>();
-
+    private List<Imovel> original;
+    private ArrayList<Imovel> arraylist = new ArrayList<Imovel>();
+    private List<Imovel> imovel = new ArrayList<Imovel>();
+    private ArrayAdapter<String> adapter_bairros;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -98,9 +101,15 @@ public class ActivityImoveis extends Activity {
         original = new ArrayList<Imovel>();
         original.addAll(arraylist);
 
-        // Binds the Adapter to the ListView
+         // Binds the Adapter to the ListView
         list.setAdapter(adapter);
-        editsearch = (EditText) findViewById(R.id.edit_buscar);
+        String[] bairros = getResources().getStringArray(R.array.bairros);
+
+        adapter_bairros = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,bairros);
+        editsearch = (AutoCompleteTextView) findViewById(R.id.edit_buscar);
+
+        editsearch.setAdapter(adapter_bairros);
+        editsearch.setThreshold(1);
 
 
         editsearch.addTextChangedListener(new TextWatcher() {

@@ -3,14 +3,22 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-
+<!--
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edit_buscar"
         android:layout_marginTop="8dp"
         android:hint="Entre com o bairro para buscar"
-        />
+        />-->
+
+    <AutoCompleteTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Entre com o bairro para buscar"
+        android:layout_marginTop="8dp"
+        android:id="@+id/edit_buscar"
+    />
 
 
     <ListView
