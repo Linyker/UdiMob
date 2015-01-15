@@ -32,24 +32,10 @@ import pdsi2.udimob.R;
 
 public class ActivitySingleItemView extends Activity {
     // Declare Variables
-    TextView txtbairro;
-    TextView txtpreco;
-    TextView txtproprietario;
-    TextView txtEmail;
-    TextView txtTelefone;
-    TextView txtDescricao;
-    TextView txtEndereco;
-    ImageView imgflag;
-    String bairro;
-    String proprietario;
-    String imagem_imovel;
-    String telefone;
-    String email;
-    String descricao;
-    String endereco;
+    private TextView txtbairro,txtpreco,txtproprietario,txtEmail,txtTelefone,txtDescricao,txtEndereco;
+    private String bairro,proprietario,imagem_imovel,telefone,email,descricao,endereco,preco;
+
     Bitmap bitmap1;
-    Button enviar_email,indicar_amigo,ver_mapa;
-    String preco;
 
     private static final int MAPA = 0;
     private static final int EMAIL = 1;
@@ -74,13 +60,10 @@ public class ActivitySingleItemView extends Activity {
         SubMenu email = menu.addSubMenu("Email");
         SubMenu imoveis = menu.addSubMenu("Imóveis");
 
-        mapa.setIcon(R.drawable.iconmap);
         mapa.add(MAPA, VER_MAPA, 0, "Ver imóvel no mapa");
         email.add(EMAIL, ENVIAR_EMAIL, 1, "Enviar email para o proprietário");
         email.add(EMAIL, INDICAR_AMIGO, 0, "Indicar imóvel para um amigo");
         imoveis.add(IMOVEIS, VER_IMOVEIS, 0, "Voltar para a lista de imóveis");
-
-
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -89,16 +72,37 @@ public class ActivitySingleItemView extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case VER_MAPA:
-                showMsg("New");
+
+                Intent i = new Intent(ActivitySingleItemView.this,ActivityMapa.class);
+                i.putExtra("endereco",endereco);
+                i.putExtra("bairro",bairro);
+                startActivity(i);
+
                 break;
             case ENVIAR_EMAIL:
-                showMsg("Save");
+
+                Intent i2 = new Intent(ActivitySingleItemView.this,ActivityEnviarEmail.class);
+                i2.putExtra("email_contato",email);
+                startActivity(i2);
+
                 break;
             case INDICAR_AMIGO:
-                showMsg("Undo");
+
+                Intent i3 = new Intent(ActivitySingleItemView.this,ActivityIndicarAmigo.class);
+                i3.putExtra("imobiliaria",proprietario);
+                i3.putExtra("endereco",endereco);
+                i3.putExtra("email",email);
+                i3.putExtra("telefone",telefone);
+                i3.putExtra("bairro",bairro);
+
+                startActivity(i3);
+
                 break;
             case VER_IMOVEIS:
-                showMsg("Redo");
+
+                Intent i4 = new Intent(ActivitySingleItemView.this,ActivityImoveis.class);
+                startActivity(i4);
+
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -116,25 +120,15 @@ public class ActivitySingleItemView extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.singleitemview);
 
-        // Get the intent from ListViewAdapter
         Intent i = getIntent();
-        // Get the results of rank
         bairro = i.getStringExtra("bairro");
-        // Get the results of population
         proprietario = i.getStringExtra("proprietario");
-        // Get the results of flag
         imagem_imovel = i.getStringExtra("imagem_imovel");
-
         email = i.getStringExtra("email");
-
         descricao = i.getStringExtra("descricao");
-
         telefone = i.getStringExtra("telefone");
-
         endereco = i.getStringExtra("endereco");
-
         preco = i.getStringExtra("preco");
-
 
         // Locate the TextViews in singleitemview.xml
         txtbairro = (TextView) findViewById(R.id.bairro);
@@ -145,13 +139,6 @@ public class ActivitySingleItemView extends Activity {
         txtDescricao = (TextView) findViewById(R.id.descricao);
         txtEndereco = (TextView) findViewById(R.id.endereco);
 
-       // enviar_email = (Button) findViewById(R.id.botao_enviar_email);
-        //indicar_amigo = (Button) findViewById(R.id.botao_indicar_amigo);
-        //ver_mapa = (Button) findViewById(R.id.botao_ver_mapa);
-
-        // Locate the ImageView in singleitemview.xml
-      //  imgflag = (ImageView) findViewById(R.id.flag);
-
         // Load the results into the TextViews
         txtbairro.setText(bairro);
         txtpreco.setText(preco);
@@ -161,72 +148,9 @@ public class ActivitySingleItemView extends Activity {
         txtDescricao.setText(descricao);
         txtEndereco.setText(endereco);
 
-        // Load the image into the ImageView
-       // imgflag.setImageResource(flag);
-
-        //final ImageView imageView = (ImageView) findViewById(R.id.imagem);
-
-
-        /*
-        new AsyncTask<Void,Void,Void>(){
-            @Override
-            protected Void doInBackground(Void... voids) {
-                try {
-                    InputStream in = new URL(imagem_imovel).openStream();
-                    bitmap1 = BitmapFactory.decodeStream(in);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(Void aVoid) {
-                if(bitmap1 != null){
-                    imageView.setImageBitmap(bitmap1);
-                }
-            }
-        }.execute();
-
-        */
-
         Gallery gallery = (Gallery) findViewById(R.id.gallery1);
         gallery.setAdapter(new ImageAdapter(this));
-        /*
-        enviar_email.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ActivitySingleItemView.this,ActivityEnviarEmail.class);
-                i.putExtra("email_contato",email);
-                startActivity(i);
-            }
-        });
 
-        indicar_amigo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ActivitySingleItemView.this,ActivityIndicarAmigo.class);
-                i.putExtra("imobiliaria",proprietario);
-                i.putExtra("endereco",endereco);
-                i.putExtra("email",email);
-                i.putExtra("telefone",telefone);
-                i.putExtra("bairro",bairro);
-
-                startActivity(i);
-            }
-        });
-
-        ver_mapa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent i = new Intent(ActivitySingleItemView.this,ActivityMapa.class);
-                i.putExtra("endereco",endereco);
-                i.putExtra("bairro",bairro);
-                startActivity(i);
-            }
-        });
-        */
     }
 
     public class ImageAdapter extends BaseAdapter
