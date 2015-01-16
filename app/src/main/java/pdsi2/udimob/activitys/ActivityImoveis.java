@@ -3,6 +3,7 @@ package pdsi2.udimob.activitys;
 /**
  * Created by Linyker on 17/11/2014.
  */
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -25,6 +26,7 @@ import android.widget.ListView;
 import pdsi2.udimob.classes.DetectaConexao;
 import pdsi2.udimob.classes.ListViewAdapter;
 import pdsi2.udimob.R;
+import pdsi2.udimob.classes.SQLiteBairro;
 import pdsi2.udimob.conexao.ImovelRest;
 import pdsi2.udimob.dto.Imovel;
 
@@ -44,6 +46,7 @@ public class ActivityImoveis extends Activity {
     private ArrayList<Imovel> arraylist = new ArrayList<Imovel>();
     private List<Imovel> imovel = new ArrayList<Imovel>();
     private ArrayAdapter<String> adapter_bairros;
+    private SQLiteBairro sqLiteBairro;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -103,9 +106,112 @@ public class ActivityImoveis extends Activity {
 
          // Binds the Adapter to the ListView
         list.setAdapter(adapter);
-        String[] bairros = getResources().getStringArray(R.array.bairros);
 
+
+        try {
+            sqLiteBairro = new SQLiteBairro(ActivityImoveis.this);
+            sqLiteBairro.openDB();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        /*
+            Para inserir os bairros, execute o código com o insert, depois execute de novo sem os inserts,
+            se não tirar os inserts, a cada execução será criado um novo registro igual.
+
+            sqLiteBairro.inserirBairro("Centro");
+            sqLiteBairro.inserirBairro("Fundinho");
+            sqLiteBairro.inserirBairro("Nossa Senhora Aparecida");
+            sqLiteBairro.inserirBairro("Martins");
+            sqLiteBairro.inserirBairro("Osvaldo Rezende");
+            sqLiteBairro.inserirBairro("Bom Jesus");
+            sqLiteBairro.inserirBairro("Brasil");
+            sqLiteBairro.inserirBairro("Cazeca");
+            sqLiteBairro.inserirBairro("Lídice");
+            sqLiteBairro.inserirBairro("Daniel Fonseca");
+            sqLiteBairro.inserirBairro("Tabajaras");
+            sqLiteBairro.inserirBairro("Presidente Roosevelt");
+            sqLiteBairro.inserirBairro("Jardim Brasília");
+            sqLiteBairro.inserirBairro("São José");
+            sqLiteBairro.inserirBairro("Marta Helena");
+            sqLiteBairro.inserirBairro("Pacaembu");
+            sqLiteBairro.inserirBairro("Santa Rosa");
+            sqLiteBairro.inserirBairro("Residencial Gramado");
+            sqLiteBairro.inserirBairro("Nossa Senhora das Graças");
+            sqLiteBairro.inserirBairro("Minas Gerais");
+            sqLiteBairro.inserirBairro("Cruzeiro do Sul");
+            sqLiteBairro.inserirBairro("Jardim América");
+            sqLiteBairro.inserirBairro("Jardim América II");
+            sqLiteBairro.inserirBairro("Distrito Industrial Norte");
+            sqLiteBairro.inserirBairro("Residencial Liberdade");
+            sqLiteBairro.inserirBairro("Maravilha");
+            sqLiteBairro.inserirBairro("Esperança");
+            sqLiteBairro.inserirBairro("Jaraguá");
+            sqLiteBairro.inserirBairro("Planalto");
+            sqLiteBairro.inserirBairro("Chácaras Tubalina");
+            sqLiteBairro.inserirBairro("Chácaras Panorama");
+            sqLiteBairro.inserirBairro("Luizote de Freitas");
+            sqLiteBairro.inserirBairro("Jardim das Palmeiras");
+            sqLiteBairro.inserirBairro("Jardim Patrícia");
+            sqLiteBairro.inserirBairro("Jardim Holanda");
+            sqLiteBairro.inserirBairro("Jardim Europa");
+            sqLiteBairro.inserirBairro("Jardim Canaã");
+            sqLiteBairro.inserirBairro("Jardim Célia");
+            sqLiteBairro.inserirBairro("Mansour");
+            sqLiteBairro.inserirBairro("Dona Zulmira");
+            sqLiteBairro.inserirBairro("Taiaman");
+            sqLiteBairro.inserirBairro("Guarani");
+            sqLiteBairro.inserirBairro("Tocantins2");
+            sqLiteBairro.inserirBairro("Morada Nova");
+            sqLiteBairro.inserirBairro("Morada do Sol");
+            sqLiteBairro.inserirBairro("Parque Santo Antônio");
+            sqLiteBairro.inserirBairro("Chácaras Rancho Alegre");
+            sqLiteBairro.inserirBairro("Jardins");
+            sqLiteBairro.inserirBairro("Tubalina");
+            sqLiteBairro.inserirBairro("Cidade Jardim");
+            sqLiteBairro.inserirBairro("Nova Uberlândia");
+            sqLiteBairro.inserirBairro("Patrimônio");
+            sqLiteBairro.inserirBairro("Morada da Colina");
+            sqLiteBairro.inserirBairro("Vigilato Pereira");
+            sqLiteBairro.inserirBairro("Saraiva");
+            sqLiteBairro.inserirBairro("Lagoinha");
+            sqLiteBairro.inserirBairro("Carajás");
+            sqLiteBairro.inserirBairro("Pampulha");
+            sqLiteBairro.inserirBairro("Jardim Karaíba");
+            sqLiteBairro.inserirBairro("Jardim Inconfidência");
+            sqLiteBairro.inserirBairro("Santa Luzia");
+            sqLiteBairro.inserirBairro("Granada");
+            sqLiteBairro.inserirBairro("São Jorge");
+            sqLiteBairro.inserirBairro("Laranjeiras");
+            sqLiteBairro.inserirBairro("Shopping Park");
+            sqLiteBairro.inserirBairro("Gávea Sul");
+            sqLiteBairro.inserirBairro("Santa Mônica");
+            sqLiteBairro.inserirBairro("Tibery");
+            sqLiteBairro.inserirBairro("Segismundo Pereira");
+            sqLiteBairro.inserirBairro("Novo Mundo");
+            sqLiteBairro.inserirBairro("Umuarama");
+            sqLiteBairro.inserirBairro("Alto Umuarama");
+            sqLiteBairro.inserirBairro("Custódio Pereira");
+            sqLiteBairro.inserirBairro("Aclimação");
+            sqLiteBairro.inserirBairro("Mansões Aeroporto");
+            sqLiteBairro.inserirBairro("Dom Almir - Região do Grande Morumbi.");
+            sqLiteBairro.inserirBairro("Alvorada");
+            sqLiteBairro.inserirBairro("Morumbi - Região do Grande Morumbi.");
+            sqLiteBairro.inserirBairro("Joana Darc - Região do Grande Morumbi.");
+            sqLiteBairro.inserirBairro("Morada dos Pássaros");
+            sqLiteBairro.inserirBairro("Quintas do Bosque");
+            sqLiteBairro.inserirBairro("Bosque dos Buritis");
+            sqLiteBairro.inserirBairro("Jardim Ipanema");
+            sqLiteBairro.inserirBairro("Jardim Califórnia");
+            sqLiteBairro.inserirBairro("Jardim Sucupira.");
+            sqLiteBairro.inserirBairro("Vila Marielza");
+         */
+
+
+        String[] bairros = sqLiteBairro.listarBairros();
         adapter_bairros = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,bairros);
+
         editsearch = (AutoCompleteTextView) findViewById(R.id.edit_buscar);
 
         editsearch.setAdapter(adapter_bairros);
@@ -207,6 +313,10 @@ public class ActivityImoveis extends Activity {
         }
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        sqLiteBairro.close();
+    }
 }
 
