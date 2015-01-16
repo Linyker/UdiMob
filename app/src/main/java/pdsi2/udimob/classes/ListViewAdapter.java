@@ -72,13 +72,29 @@ public class ListViewAdapter extends BaseAdapter {
         String tipo = "";
         switch (id){
             case 1:
-                tipo = "Venda";
+                tipo = "Casa-Venda";
             break;
             case 2:
-                tipo = "Aluguel";
+                tipo = "Casa-Aluguel";
+            break;
+            case 3:
+                tipo = "Apartamento-Venda";
+            break;
+            case 4:
+                tipo = "Apartamento-Aluguel";
             break;
         }
         return tipo;
+    }
+
+    public String[] separar_tipo(String tipo){
+        Log.e("TIPO IMOVEL SEM ALTERAÇÂO",tipo);
+        String[] tipo1 = tipo.split("-");
+
+        Log.e("TIPO IMÓVEL 0 : ",tipo1[0]);
+        Log.e("TIPO IMÓVEL 1: ",tipo1[1]);
+
+        return tipo.split("-");
     }
 
     public View getView(final int position, View view, ViewGroup parent) {
@@ -99,9 +115,17 @@ public class ListViewAdapter extends BaseAdapter {
         // Set the results into TextViews
         holder.bairro.setText(" " + imovel.get(position).getBairro());
         holder.preco.setText(" "+ imovel.get(position).getPreco());
-        holder.tipo_imovel.setText(" "+ tipo_imovel(imovel.get(position).getTipoImovel()));
+        String tp_imovel[] =  separar_tipo(tipo_imovel(imovel.get(position).getTipoImovel()));
+        holder.tipo_imovel.setText(" "+ tp_imovel[1]);
         // Set the results into ImageView
 
+        if(tp_imovel[0].equals("Casa")){
+            holder.imagem_imovel.setImageResource(R.drawable.casa);
+        }else if(tp_imovel[0].equals("Apartamento")){
+            holder.imagem_imovel.setImageResource(R.drawable.apartamento);
+        }
+
+        /*
         if(imovel.get(position) != null ) {
             new AsyncTask<Void, Void, Void>() {
 
@@ -127,7 +151,7 @@ public class ListViewAdapter extends BaseAdapter {
                     }
                 }
             }.execute();
-        }
+        }*/
         // Listen for ListView Item Click
         view.setOnClickListener(new OnClickListener() {
 
@@ -159,7 +183,7 @@ public class ListViewAdapter extends BaseAdapter {
 
                 intent.putExtra("endereco",
                         (imovel.get(position).getLogradouro() + ","+imovel.get(position).getNumero()));
-                Log.e("ENDERECO",imovel.get(position).getLogradouro() + ","+imovel.get(position).getNumero());
+                //Log.e("ENDERECO",imovel.get(position).getLogradouro() + ","+imovel.get(position).getNumero());
 
                 // Start SingleItemView Class
                 mContext.startActivity(intent);
@@ -185,11 +209,14 @@ public class ListViewAdapter extends BaseAdapter {
         } else {
             Log.e("Passo","2");
             Log.e("Imoveis2", String.valueOf(imovel.size()));
-            for (Imovel wp : arraylist) {
-                if (wp.getBairro().toLowerCase(Locale.getDefault())
-                        .contains(charText)) {
 
-                    imovel.add(wp);
+            if(arraylist.size() >= 1) {
+                for (Imovel wp : arraylist) {
+                    if (wp.getBairro().toLowerCase(Locale.getDefault())
+                            .contains(charText)) {
+
+                        imovel.add(wp);
+                    }
                 }
             }
         }

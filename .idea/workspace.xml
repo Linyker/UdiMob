@@ -22,11 +22,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: pdsi2.udimob" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4734d017-235d-48f9-a5a5-f103db4aeaca" name="Default" comment="adicionado banco sqlite com os bairros">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/SQLiteBairro.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityImoveis.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityImoveis.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/conexao/ImovelRest.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/conexao/ImovelRest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+    <list default="true" id="4734d017-235d-48f9-a5a5-f103db4aeaca" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/ListViewAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/ListViewAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/lista_imoveis.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/lista_imoveis.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Udimob.iws" />
@@ -56,7 +54,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="697">
+            <state vertical-scroll-proportion="-5.6666665" vertical-offset="51" max-vertical-offset="697">
               <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding />
             </state>
@@ -76,34 +74,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivitySingleItemView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivitySingleItemView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2533" max-vertical-offset="3808">
-              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="activity_my.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_my.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.481482" vertical-offset="587" max-vertical-offset="952">
+            <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="952">
               <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebServiceCliente.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/conexao/WebServiceCliente.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1632">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -112,7 +90,7 @@
       <file leaf-file-name="ImovelRest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/conexao/ImovelRest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="561">
+            <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="561">
               <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
               <folding />
             </state>
@@ -124,45 +102,43 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="730" max-vertical-offset="1802">
               <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#839#840#0" expanded="true" />
-                <element signature="e#900#901#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityImoveis.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ActivityImoveis.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityImoveis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5065963" vertical-offset="1848" max-vertical-offset="5576">
+            <state vertical-scroll-proportion="0.0" vertical-offset="4041" max-vertical-offset="5372">
               <caret line="120" column="88" selection-start-line="120" selection-start-column="88" selection-end-line="120" selection-end-column="88" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1338#1346#0" expanded="true" />
                 <element signature="e#1397#1405#0" expanded="true" />
-                <element signature="e#9876#10151#0" expanded="true" />
-                <element signature="e#10132#10133#0" expanded="true" />
-                <element signature="e#10426#11536#0" expanded="true" />
-                <element signature="e#11525#11526#0" expanded="true" />
-                <element signature="e#12100#12445#0" expanded="true" />
-                <element signature="e#12422#12423#0" expanded="true" />
-                <element signature="e#12505#12710#0" expanded="true" />
-                <element signature="e#12695#12696#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lista_imoveis.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ListViewAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/ListViewAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="849" max-vertical-offset="3434">
+              <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lista_imoveis.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/lista_imoveis.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="638" max-vertical-offset="1003">
-              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+            <state vertical-scroll-proportion="2.328767" vertical-offset="0" max-vertical-offset="1003">
+              <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -171,7 +147,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+            <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="357">
               <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
@@ -1301,7 +1277,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activity/ActivitySingleItemView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activity/ActivityImoveis.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/lista_imoveis.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/dto/Imovel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/conexao/WebServiceCliente.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/tela_inicial.xml" />
@@ -1318,6 +1293,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/SQLiteBairro.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityImoveis.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/ListViewAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/lista_imoveis.xml" />
       </list>
     </option>
   </component>
@@ -1396,6 +1373,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -1686,7 +1664,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1767,6 +1744,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1792,19 +1782,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2013,7 +1990,11 @@
       <created>1421362422230</created>
       <updated>1421362422230</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="adicionado banco sqlite com os bairros">
+      <created>1421439161759</created>
+      <updated>1421439161759</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2037,13 +2018,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2934947" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2934947" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2074,11 +2055,11 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30494037" sideWeight="0.693646" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24130106" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2095,8 +2076,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32367972" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32027256" sideWeight="0.30635402" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -2115,7 +2096,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Pasta dto e classe Imovel adicionados" />
     <MESSAGE value="Adicionado tela de envio de e-mail já funcionando" />
     <MESSAGE value="Modificações nos nomes dos arquivos" />
     <MESSAGE value="Adicionado tela de indique um amigo (funcionando)" />
@@ -2140,7 +2120,8 @@
     <MESSAGE value="Alteração layout da tela SingleItemView (adicionado submenu)" />
     <MESSAGE value="Adicionado os caminhos no menu da pagina do imóvel(SingleItemView)" />
     <MESSAGE value="adicionado autocomplete na busca por bairro" />
-    <option name="LAST_COMMIT_MESSAGE" value="adicionado autocomplete na busca por bairro" />
+    <MESSAGE value="adicionado banco sqlite com os bairros" />
+    <option name="LAST_COMMIT_MESSAGE" value="adicionado banco sqlite com os bairros" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2148,13 +2129,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/ListViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3162" max-vertical-offset="3383">
-          <caret line="186" column="13" selection-start-line="180" selection-start-column="12" selection-end-line="186" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/GeoCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="1258">
@@ -2328,10 +2302,10 @@
       </provider>
     </entry>
     <entry file="file://C:/Program Files (x86)/Java/Android/android-sdk/platforms/android-21/data/res/drawable-ldpi/list_selector_background_focus.9.png">
-      <provider editor-type-id="images">
+      <provider selected="true" editor-type-id="ninepatcheditor">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="ninepatcheditor">
+      <provider editor-type-id="images">
         <state />
       </provider>
     </entry>
@@ -2462,14 +2436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/ListViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="2975">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivitySingleItemView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2188" max-vertical-offset="3230">
@@ -2502,19 +2468,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="697">
+        <state vertical-scroll-proportion="-5.6666665" vertical-offset="51" max-vertical-offset="697">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/lista_imoveis.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="638" max-vertical-offset="1003">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -2527,20 +2482,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/conexao/ImovelRest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="561">
-          <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_my.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.481482" vertical-offset="587" max-vertical-offset="952">
+        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="952">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
@@ -2550,31 +2497,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1342" max-vertical-offset="1802">
           <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#900#901#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/conexao/ImovelRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="561">
+          <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/Android/android-sdk/platforms/android-21/android.jar!/android/os/AsyncTask.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7308707" vertical-offset="573" max-vertical-offset="952">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityImoveis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5065963" vertical-offset="1848" max-vertical-offset="5576">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1848" max-vertical-offset="5372">
           <caret line="120" column="88" selection-start-line="120" selection-start-column="88" selection-end-line="120" selection-end-column="88" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1338#1346#0" expanded="true" />
             <element signature="e#1397#1405#0" expanded="true" />
-            <element signature="e#9876#10151#0" expanded="true" />
-            <element signature="e#10132#10133#0" expanded="true" />
-            <element signature="e#10426#11536#0" expanded="true" />
-            <element signature="e#11525#11526#0" expanded="true" />
-            <element signature="e#12100#12445#0" expanded="true" />
-            <element signature="e#12422#12423#0" expanded="true" />
-            <element signature="e#12505#12710#0" expanded="true" />
-            <element signature="e#12695#12696#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/ListViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="849" max-vertical-offset="3434">
+          <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/lista_imoveis.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.328767" vertical-offset="0" max-vertical-offset="1003">
+          <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
