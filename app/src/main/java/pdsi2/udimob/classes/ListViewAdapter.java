@@ -88,11 +88,8 @@ public class ListViewAdapter extends BaseAdapter {
     }
 
     public String[] separar_tipo(String tipo){
-        Log.e("TIPO IMOVEL SEM ALTERAÇÂO",tipo);
-        String[] tipo1 = tipo.split("-");
 
-        Log.e("TIPO IMÓVEL 0 : ",tipo1[0]);
-        Log.e("TIPO IMÓVEL 1: ",tipo1[1]);
+        String[] tipo1 = tipo.split("-");
 
         return tipo.split("-");
     }

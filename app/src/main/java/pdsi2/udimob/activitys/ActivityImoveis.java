@@ -9,7 +9,11 @@ import java.util.List;
 import java.util.Locale;
 
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,18 +39,15 @@ public class ActivityImoveis extends Activity {
     // Declare Variables
     private ListView list;
     private ListViewAdapter adapter;
-    //private EditText editsearch;
     private AutoCompleteTextView editsearch;
-    private Button botao_busca;
-    private String[] imagem_url;
     private String [] email;
     private String [] telefone;
     private String[] nome;
     private List<Imovel> original;
     private ArrayList<Imovel> arraylist = new ArrayList<Imovel>();
-    private List<Imovel> imovel = new ArrayList<Imovel>();
     private ArrayAdapter<String> adapter_bairros;
     private SQLiteBairro sqLiteBairro;
+    private static final int NOTIFY_ME_ID=9999;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,17 +58,7 @@ public class ActivityImoveis extends Activity {
         // Locate the ListView in listview_main.xml
         list = (ListView) findViewById(R.id.listview);
         nome = new String[] {"João","Maria","José","Marta","Joaquim","Fulano","Ciclano","Beltrano","Pedro","Marcos" };
-        imagem_url = new String[] {
-                "http://nrksuper.no/super/files/2014/05/android.jpeg",
-                "http://nrksuper.no/super/files/2014/05/android.jpeg",
-                "http://nrksuper.no/super/files/2014/05/android.jpeg",
-                "http://nrksuper.no/super/files/2014/05/android.jpeg",
-                "http://nrksuper.no/super/files/2014/05/android.jpeg",
-                "http://nrksuper.no/super/files/2014/05/android.jpeg",
-                "http://nrksuper.no/super/files/2014/05/android.jpeg",
-                "http://nrksuper.no/super/files/2014/05/android.jpeg",
-                "http://nrksuper.no/super/files/2014/05/android.jpeg",
-                "http://nrksuper.no/super/files/2014/05/android.jpeg" };
+
 
         email = new String[]{
                 "linykerrm@gmail.com",
@@ -242,6 +233,19 @@ public class ActivityImoveis extends Activity {
 
             }
         });
+
+
+
+
+        //Criando a notificação
+        final NotificationManager mgr = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
+        Notification note = new Notification(R.drawable.dica,"Udimob-Dicas!",System.currentTimeMillis());
+
+        PendingIntent i = PendingIntent.getActivity(this,0,new Intent(this,ActivityNotification.class),0);
+
+        note.setLatestEventInfo(this,"Dicas para utilização ","Clique aqui para saber mais!",i);
+        mgr.notify(NOTIFY_ME_ID,note);
+
     }
 
 
@@ -265,7 +269,7 @@ public class ActivityImoveis extends Activity {
 
                     for (int i = 0; i < imovels.size(); i++)
                     {
-                        Imovel wp = new Imovel(nome[i],imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),email[i],telefone[i],imagem_url[i]);
+                        Imovel wp = new Imovel(nome[i],imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),email[i],telefone[i],"");
                         // Binds all strings into an array
                         arraylist.add(wp);
                     }
