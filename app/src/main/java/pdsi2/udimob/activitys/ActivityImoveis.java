@@ -23,10 +23,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-
 import pdsi2.udimob.classes.DetectaConexao;
 import pdsi2.udimob.classes.ListViewAdapter;
 import pdsi2.udimob.R;
@@ -40,58 +37,21 @@ public class ActivityImoveis extends Activity {
     private ListView list;
     private ListViewAdapter adapter;
     private AutoCompleteTextView editsearch;
-    private String [] email;
-    private String [] telefone;
-    private String[] nome;
     private List<Imovel> original;
     private ArrayList<Imovel> arraylist = new ArrayList<Imovel>();
     private ArrayAdapter<String> adapter_bairros;
     private SQLiteBairro sqLiteBairro;
     private static final int NOTIFY_ME_ID=9999;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         verificaConexao();
         setContentView(R.layout.imoveis);
-
         // Locate the ListView in listview_main.xml
         list = (ListView) findViewById(R.id.listview);
-        nome = new String[] {"João","Maria","José","Marta","Joaquim","Fulano","Ciclano","Beltrano","Pedro","Marcos" };
-
-
-        email = new String[]{
-                "linykerrm@gmail.com",
-                "linykerrm@gmail.com",
-                "linykerrm@gmail.com",
-                "linykerrm@gmail.com",
-                "linykerrm@gmail.com",
-                "linykerrm@gmail.com",
-                "linykerrm@gmail.com",
-                "linykerrm@gmail.com",
-                "linykerrm@gmail.com",
-                "linykerrm@gmail.com",
-        };
-
-        telefone = new String[]{
-                "(34) 3212-1111",
-                "(34) 3222-3332",
-                "(34) 3432-2342",
-                "(34) 3564-6876",
-                "(34) 3142-4534",
-                "(34) 3234-6876",
-                "(34) 3223-6454",
-                "(34) 3223-4556",
-                "(34) 3215-4321",
-                "(34) 3212-1234"
-        };
-
-
-
         carregarImoveis();
         // Pass results to ListViewAdapter Class
         adapter = new ListViewAdapter(this, arraylist);
-
         original = new ArrayList<Imovel>();
         original.addAll(arraylist);
 
@@ -106,98 +66,6 @@ public class ActivityImoveis extends Activity {
             e.printStackTrace();
         }
 
-
-        /*
-            Para inserir os bairros, execute o código com o insert, depois execute de novo sem os inserts,
-            se não tirar os inserts, a cada execução será criado um novo registro igual.
-
-            sqLiteBairro.inserirBairro("Centro");
-            sqLiteBairro.inserirBairro("Fundinho");
-            sqLiteBairro.inserirBairro("Nossa Senhora Aparecida");
-            sqLiteBairro.inserirBairro("Martins");
-            sqLiteBairro.inserirBairro("Osvaldo Rezende");
-            sqLiteBairro.inserirBairro("Bom Jesus");
-            sqLiteBairro.inserirBairro("Brasil");
-            sqLiteBairro.inserirBairro("Cazeca");
-            sqLiteBairro.inserirBairro("Lídice");
-            sqLiteBairro.inserirBairro("Daniel Fonseca");
-            sqLiteBairro.inserirBairro("Tabajaras");
-            sqLiteBairro.inserirBairro("Presidente Roosevelt");
-            sqLiteBairro.inserirBairro("Jardim Brasília");
-            sqLiteBairro.inserirBairro("São José");
-            sqLiteBairro.inserirBairro("Marta Helena");
-            sqLiteBairro.inserirBairro("Pacaembu");
-            sqLiteBairro.inserirBairro("Santa Rosa");
-            sqLiteBairro.inserirBairro("Residencial Gramado");
-            sqLiteBairro.inserirBairro("Nossa Senhora das Graças");
-            sqLiteBairro.inserirBairro("Minas Gerais");
-            sqLiteBairro.inserirBairro("Cruzeiro do Sul");
-            sqLiteBairro.inserirBairro("Jardim América");
-            sqLiteBairro.inserirBairro("Jardim América II");
-            sqLiteBairro.inserirBairro("Distrito Industrial Norte");
-            sqLiteBairro.inserirBairro("Residencial Liberdade");
-            sqLiteBairro.inserirBairro("Maravilha");
-            sqLiteBairro.inserirBairro("Esperança");
-            sqLiteBairro.inserirBairro("Jaraguá");
-            sqLiteBairro.inserirBairro("Planalto");
-            sqLiteBairro.inserirBairro("Chácaras Tubalina");
-            sqLiteBairro.inserirBairro("Chácaras Panorama");
-            sqLiteBairro.inserirBairro("Luizote de Freitas");
-            sqLiteBairro.inserirBairro("Jardim das Palmeiras");
-            sqLiteBairro.inserirBairro("Jardim Patrícia");
-            sqLiteBairro.inserirBairro("Jardim Holanda");
-            sqLiteBairro.inserirBairro("Jardim Europa");
-            sqLiteBairro.inserirBairro("Jardim Canaã");
-            sqLiteBairro.inserirBairro("Jardim Célia");
-            sqLiteBairro.inserirBairro("Mansour");
-            sqLiteBairro.inserirBairro("Dona Zulmira");
-            sqLiteBairro.inserirBairro("Taiaman");
-            sqLiteBairro.inserirBairro("Guarani");
-            sqLiteBairro.inserirBairro("Tocantins2");
-            sqLiteBairro.inserirBairro("Morada Nova");
-            sqLiteBairro.inserirBairro("Morada do Sol");
-            sqLiteBairro.inserirBairro("Parque Santo Antônio");
-            sqLiteBairro.inserirBairro("Chácaras Rancho Alegre");
-            sqLiteBairro.inserirBairro("Jardins");
-            sqLiteBairro.inserirBairro("Tubalina");
-            sqLiteBairro.inserirBairro("Cidade Jardim");
-            sqLiteBairro.inserirBairro("Nova Uberlândia");
-            sqLiteBairro.inserirBairro("Patrimônio");
-            sqLiteBairro.inserirBairro("Morada da Colina");
-            sqLiteBairro.inserirBairro("Vigilato Pereira");
-            sqLiteBairro.inserirBairro("Saraiva");
-            sqLiteBairro.inserirBairro("Lagoinha");
-            sqLiteBairro.inserirBairro("Carajás");
-            sqLiteBairro.inserirBairro("Pampulha");
-            sqLiteBairro.inserirBairro("Jardim Karaíba");
-            sqLiteBairro.inserirBairro("Jardim Inconfidência");
-            sqLiteBairro.inserirBairro("Santa Luzia");
-            sqLiteBairro.inserirBairro("Granada");
-            sqLiteBairro.inserirBairro("São Jorge");
-            sqLiteBairro.inserirBairro("Laranjeiras");
-            sqLiteBairro.inserirBairro("Shopping Park");
-            sqLiteBairro.inserirBairro("Gávea Sul");
-            sqLiteBairro.inserirBairro("Santa Mônica");
-            sqLiteBairro.inserirBairro("Tibery");
-            sqLiteBairro.inserirBairro("Segismundo Pereira");
-            sqLiteBairro.inserirBairro("Novo Mundo");
-            sqLiteBairro.inserirBairro("Umuarama");
-            sqLiteBairro.inserirBairro("Alto Umuarama");
-            sqLiteBairro.inserirBairro("Custódio Pereira");
-            sqLiteBairro.inserirBairro("Aclimação");
-            sqLiteBairro.inserirBairro("Mansões Aeroporto");
-            sqLiteBairro.inserirBairro("Dom Almir - Região do Grande Morumbi.");
-            sqLiteBairro.inserirBairro("Alvorada");
-            sqLiteBairro.inserirBairro("Morumbi - Região do Grande Morumbi.");
-            sqLiteBairro.inserirBairro("Joana Darc - Região do Grande Morumbi.");
-            sqLiteBairro.inserirBairro("Morada dos Pássaros");
-            sqLiteBairro.inserirBairro("Quintas do Bosque");
-            sqLiteBairro.inserirBairro("Bosque dos Buritis");
-            sqLiteBairro.inserirBairro("Jardim Ipanema");
-            sqLiteBairro.inserirBairro("Jardim Califórnia");
-            sqLiteBairro.inserirBairro("Jardim Sucupira.");
-            sqLiteBairro.inserirBairro("Vila Marielza");
-         */
 
 
         String[] bairros = sqLiteBairro.listarBairros();
@@ -227,14 +95,12 @@ public class ActivityImoveis extends Activity {
                     public void run() {
                         String texto = editsearch.getText().toString().toLowerCase(Locale.getDefault());
                         adapter.filter(texto);
+
                     }
                 }.start();
 
-
             }
         });
-
-
 
 
         //Criando a notificação
@@ -269,7 +135,7 @@ public class ActivityImoveis extends Activity {
 
                     for (int i = 0; i < imovels.size(); i++)
                     {
-                        Imovel wp = new Imovel(nome[i],imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),email[i],telefone[i],"");
+                        Imovel wp = new Imovel(imovels.get(i).getUsuario(),imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),imovels.get(i).getEmail(),imovels.get(i).getTelefone(),"");
                         // Binds all strings into an array
                         arraylist.add(wp);
                     }

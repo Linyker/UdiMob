@@ -187,6 +187,7 @@ public class ListViewAdapter extends BaseAdapter {
             }
         });
 
+
         return view;
     }
 
@@ -194,19 +195,11 @@ public class ListViewAdapter extends BaseAdapter {
 
     // Filter Class
     public void filter(String charText) {
-
-
         charText = charText.toLowerCase(Locale.getDefault());
-        Log.e("Caracteres",charText);
-        Log.e("Imoveis", String.valueOf(imovel.size()));
         imovel.clear();
         if (charText.length() == 0) {
             imovel.addAll(arraylist);
-            Log.e("Passo","1");
         } else {
-            Log.e("Passo","2");
-            Log.e("Imoveis2", String.valueOf(imovel.size()));
-
             if(arraylist.size() >= 1) {
                 for (Imovel wp : arraylist) {
                     if (wp.getBairro().toLowerCase(Locale.getDefault())

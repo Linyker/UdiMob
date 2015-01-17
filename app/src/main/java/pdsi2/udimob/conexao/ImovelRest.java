@@ -11,7 +11,7 @@ import pdsi2.udimob.dto.Imovel;
 
 public class ImovelRest {
 
-	private static final String URL_WS = "http://10.248.72.223:8080/WebServiceREST/imovel/";
+	private static final String URL_WS = "http://192.168.0.158:8080/WebServiceREST/imovel/";
 
 	public List<Imovel> getListaImovel() throws Exception {
 

@@ -12,7 +12,7 @@ public class Imovel {
 
     private Integer tipoImovel;
 
-    private Integer usuario;
+    private String usuario;
 
     private String logradouro;
 
@@ -30,7 +30,7 @@ public class Imovel {
 
     private String imagem_url;
 
-    public Imovel(String nome, Integer idImovel, Integer tipoImovel, Integer usuario, String logradouro, Integer numero, String bairro, String descricaoImovel, Double preco, String email, String telefone, String imagem_url) {
+    public Imovel(String nome, Integer idImovel, Integer tipoImovel, String usuario, String logradouro, Integer numero, String bairro, String descricaoImovel, Double preco, String email, String telefone, String imagem_url) {
         this.nome = nome;
         this.idImovel = idImovel;
         this.tipoImovel = tipoImovel;
@@ -93,11 +93,11 @@ public class Imovel {
         this.tipoImovel = tipoImovel;
     }
 
-    public Integer getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Integer usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 
