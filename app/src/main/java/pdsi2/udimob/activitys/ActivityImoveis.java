@@ -21,9 +21,18 @@ import android.app.Activity;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.drive.internal.ad;
+
 import pdsi2.udimob.classes.DetectaConexao;
 import pdsi2.udimob.classes.ListViewAdapter;
 import pdsi2.udimob.R;
@@ -54,9 +63,9 @@ public class ActivityImoveis extends Activity {
         adapter = new ListViewAdapter(this, arraylist);
         original = new ArrayList<Imovel>();
         original.addAll(arraylist);
-
          // Binds the Adapter to the ListView
         list.setAdapter(adapter);
+
 
 
         try {
@@ -95,9 +104,9 @@ public class ActivityImoveis extends Activity {
                     public void run() {
                         String texto = editsearch.getText().toString().toLowerCase(Locale.getDefault());
                         adapter.filter(texto);
-
                     }
                 }.start();
+
 
             }
         });

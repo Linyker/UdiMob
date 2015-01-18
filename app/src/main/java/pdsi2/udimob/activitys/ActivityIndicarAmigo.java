@@ -37,7 +37,7 @@ public class ActivityIndicarAmigo extends Activity {
         telefone = i.getStringExtra("telefone");
         bairro = i.getStringExtra("bairro");
 
-        mensagem = "Olá!\n\nA imobiliária "+imobiliaria+" está vendendo ou alugando um imovél.\nAchei que você teria interesse :)" +
+        mensagem = "Olá!\n\nA imobiliária "+imobiliaria+" está anunciando um imovél.\nAchei que você teria interesse :)" +
                 "\nO imóvel fica na "+endereco+" no bairro "+bairro+"" +
                 "\n\n Segue os contatos da imobiliária : " +
                 "\n Email: "+email+

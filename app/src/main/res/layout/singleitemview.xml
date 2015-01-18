@@ -4,12 +4,14 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="20"
+    android:background="#E3E4E2"
     >
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_weight="10"
+        android:background="#E3E4E2"
         >
 
         <Gallery
@@ -26,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_weight="10"
-        android:background="#CCC"
+        android:background="#E3E4E2"
         >
 
 
@@ -34,55 +36,91 @@
             android:id="@+id/labelEndereco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/endereco" />
+            android:text="@string/endereco"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="#1150E5"
+            />
 
         <TextView
             android:id="@+id/endereco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/labelEndereco" />
+            android:layout_toRightOf="@+id/labelEndereco"
+            android:layout_marginTop="2dp"
+            android:textColor="#838485"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            />
 
         <TextView
             android:id="@+id/labelBairro"
             android:layout_below="@id/labelEndereco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bairro" />
+            android:text="@string/bairro"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="#1150E5"
+            />
 
         <TextView
             android:id="@+id/bairro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/labelBairro"
-            android:layout_below="@id/endereco"/>
+            android:layout_below="@id/endereco"
+            android:layout_marginTop="2dp"
+            android:textColor="#838485"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            />
 
         <TextView
             android:id="@+id/precolabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/labelBairro"
-            android:text="@string/preco" />
+            android:text="@string/preco"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="#1150E5"
+            />
 
         <TextView
             android:id="@+id/preco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bairro"
-            android:layout_toRightOf="@+id/precolabel" />
+            android:layout_toRightOf="@+id/precolabel"
+            android:layout_marginTop="3dp"
+            android:textColor="#838485"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            />
 
         <TextView
             android:id="@+id/proprietariolabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/precolabel"
-            android:text="@string/proprietario" />
+            android:text="@string/proprietario"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="#1150E5"
+            />
 
         <TextView
             android:id="@+id/proprietario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/preco"
-            android:layout_toRightOf="@+id/proprietariolabel" />
+            android:layout_toRightOf="@+id/proprietariolabel"
+            android:layout_marginTop="2dp"
+            android:textColor="#838485"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,6 +128,9 @@
             android:id="@+id/emaillabel"
             android:layout_below="@id/proprietariolabel"
             android:text="@string/email"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="#1150E5"
             />
 
         <TextView
@@ -98,6 +139,10 @@
             android:id="@+id/email"
             android:layout_below="@id/proprietario"
             android:layout_toRightOf="@id/emaillabel"
+            android:layout_marginTop="2dp"
+            android:textColor="#838485"
+            android:textStyle="bold"
+            android:textSize="14dp"
             />
 
         <TextView
@@ -106,6 +151,9 @@
             android:id="@+id/telefonelabel"
             android:layout_below="@id/emaillabel"
             android:text="@string/telefone"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="#1150E5"
             />
 
         <TextView
@@ -114,6 +162,10 @@
             android:id="@+id/telefone"
             android:layout_below="@id/email"
             android:layout_toRightOf="@id/telefonelabel"
+            android:layout_marginTop="3dp"
+            android:textColor="#838485"
+            android:textStyle="bold"
+            android:textSize="14dp"
             />
 
         <TextView
@@ -122,14 +174,20 @@
             android:id="@+id/descricaolabel"
             android:text="@string/descricao"
             android:layout_below="@+id/telefonelabel"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="#1150E5"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/descricao"
-            android:layout_below="@id/telefone"
-            android:layout_toRightOf="@id/descricaolabel"
+            android:layout_below="@id/descricaolabel"
+            android:layout_marginTop="2dp"
+            android:textColor="#838485"
+            android:textStyle="bold"
+            android:textSize="14dp"
             />
 
     </RelativeLayout>
@@ -137,7 +195,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/background_dark"
+        android:background="#9FA196"
     >
 
         <ImageView
@@ -152,7 +210,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/informacao"
             android:text="  ACESSE O BOTÃO MENU DO SEU CELULAR PARA VER AS OPÇÕES"
-            android:textColor="@android:color/secondary_text_dark_nodisable"
+            android:textColor="#111110"
             android:textSize="10dp"
             android:textStyle="bold"
             android:layout_weight="10" />

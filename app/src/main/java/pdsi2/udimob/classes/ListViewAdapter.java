@@ -89,8 +89,6 @@ public class ListViewAdapter extends BaseAdapter {
 
     public String[] separar_tipo(String tipo){
 
-        String[] tipo1 = tipo.split("-");
-
         return tipo.split("-");
     }
 
@@ -111,7 +109,7 @@ public class ListViewAdapter extends BaseAdapter {
         }
         // Set the results into TextViews
         holder.bairro.setText(" " + imovel.get(position).getBairro());
-        holder.preco.setText(" "+ imovel.get(position).getPreco());
+        holder.preco.setText(" R$"+ imovel.get(position).getPreco());
         String tp_imovel[] =  separar_tipo(tipo_imovel(imovel.get(position).getTipoImovel()));
         holder.tipo_imovel.setText(" "+ tp_imovel[1]);
         // Set the results into ImageView

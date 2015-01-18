@@ -141,7 +141,7 @@ public class ActivitySingleItemView extends Activity {
 
         // Load the results into the TextViews
         txtbairro.setText(bairro);
-        txtpreco.setText(preco);
+        txtpreco.setText("R$"+preco);
         txtproprietario.setText(proprietario);
         txtEmail.setText(email);
         txtTelefone.setText(telefone);

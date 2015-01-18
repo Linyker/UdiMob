@@ -1,48 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:background="#E3E4E2"
+
+    >
 
 
     <TextView
         android:id="@+id/labelBairro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bairro" />
+        android:text="@string/bairro"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textColor="#1150E5"
+        android:layout_marginBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/bairro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/labelBairro" />
+        android:layout_toRightOf="@+id/labelBairro"
+        android:textColor="#838485"
+        android:textStyle="bold"
+        android:textSize="14dp"
+        android:layout_marginTop="2dp"
+        />
 
     <TextView
         android:id="@+id/precolabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/labelBairro"
-        android:text="@string/preco" />
+        android:text="@string/preco"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textColor="#1150E5"
+        android:layout_marginBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/preco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bairro"
-        android:layout_toRightOf="@+id/precolabel" />
+        android:layout_toRightOf="@+id/precolabel"
+        android:textColor="#838485"
+        android:textStyle="bold"
+        android:textSize="14dp"
+        android:layout_marginTop="4dp"
+        />
 
     <TextView
         android:id="@+id/tipoIMovelLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/precolabel"
-        android:text="Tipo do Imóvel :"/>
+        android:text="Situação :"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textColor="#1150E5"
+        android:layout_marginBottom="2dp"
+        />
 
     <TextView
         android:id="@+id/tipoImovel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/preco"
-        android:layout_toRightOf="@+id/tipoIMovelLabel" />
+        android:layout_toRightOf="@+id/tipoIMovelLabel"
+        android:textColor="#838485"
+        android:textStyle="bold"
+        android:textSize="14dp"
+        android:layout_marginTop="5dp"
+        />
 
     <ImageView
         android:id="@+id/imagem_imovel"
