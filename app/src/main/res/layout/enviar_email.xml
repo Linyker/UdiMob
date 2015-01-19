@@ -76,6 +76,8 @@
         android:layout_height="wrap_content"
         android:text="Enviar"
         android:drawableRight="@drawable/send_mail"
+        android:background="@drawable/button"
+        style="@style/button_text"
         />
 
 </LinearLayout>

@@ -34,7 +34,10 @@
             android:text="Distancia"
             android:id="@+id/botao_distancia"
             android:layout_alignBottom="@+id/map"
-            android:layout_alignParentLeft="true" />
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button"
+            style="@style/button_text"
+            />
 
         <Button
             android:layout_width="wrap_content"
@@ -42,7 +45,10 @@
             android:text="Imoveis"
             android:id="@+id/botao_imoveis"
             android:layout_alignBottom="@+id/map"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button"
+            style="@style/button_text"
+            />
 
         <Button
             android:layout_width="wrap_content"
@@ -50,7 +56,10 @@
             android:text="Traçar Rota"
             android:id="@+id/botao_rota"
             android:layout_alignBottom="@+id/map"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button"
+            style="@style/button_text"
+            />
 
 
     </LinearLayout>
