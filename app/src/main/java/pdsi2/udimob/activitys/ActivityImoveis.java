@@ -50,11 +50,15 @@ public class ActivityImoveis extends Activity {
     private ArrayList<Imovel> arraylist = new ArrayList<Imovel>();
     private ArrayAdapter<String> adapter_bairros;
     private SQLiteBairro sqLiteBairro;
-    private static final int NOTIFY_ME_ID=9999;
+    private static String situacao_imovel;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        verificaConexao();
+
+        //Recebendo o parametro vindo da tela inicial
+        Intent i = getIntent();
+        situacao_imovel = i.getStringExtra("situacao_imovel");
+
         setContentView(R.layout.imoveis);
         // Locate the ListView in listview_main.xml
         list = (ListView) findViewById(R.id.listview);
@@ -112,14 +116,7 @@ public class ActivityImoveis extends Activity {
         });
 
 
-        //Criando a notificação
-        final NotificationManager mgr = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
-        Notification note = new Notification(R.drawable.dica,"Udimob-Dicas!",System.currentTimeMillis());
 
-        PendingIntent i = PendingIntent.getActivity(this,0,new Intent(this,ActivityNotification.class),0);
-
-        note.setLatestEventInfo(this,"Dicas para utilização ","Clique aqui para saber mais!",i);
-        mgr.notify(NOTIFY_ME_ID,note);
 
     }
 
@@ -144,9 +141,26 @@ public class ActivityImoveis extends Activity {
 
                     for (int i = 0; i < imovels.size(); i++)
                     {
-                        Imovel wp = new Imovel(imovels.get(i).getUsuario(),imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),imovels.get(i).getEmail(),imovels.get(i).getTelefone(),"");
-                        // Binds all strings into an array
-                        arraylist.add(wp);
+
+                        if(situacao_imovel.equals("aluguel")){
+                            if(imovels.get(i).getTipoImovel() == 2 || imovels.get(i).getTipoImovel() == 4){
+                                Log.e("Aluguel", String.valueOf(imovels.get(i).getTipoImovel()));
+                                Imovel wp = new Imovel(imovels.get(i).getUsuario(),imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),imovels.get(i).getEmail(),imovels.get(i).getTelefone(),"");
+                                // Binds all strings into an array
+                                arraylist.add(wp);
+                            }
+
+                        }else if(situacao_imovel.equals("venda")){
+                            if(imovels.get(i).getTipoImovel() == 1 || imovels.get(i).getTipoImovel() == 3){
+                                Log.e("Venda", String.valueOf(imovels.get(i).getTipoImovel()));
+                                Imovel wp = new Imovel(imovels.get(i).getUsuario(),imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),imovels.get(i).getEmail(),imovels.get(i).getTelefone(),"");
+                                // Binds all strings into an array
+                                arraylist.add(wp);
+                            }
+
+                        }
+
+
                     }
 
                     // Pass results to ListViewAdapter Class
@@ -161,36 +175,7 @@ public class ActivityImoveis extends Activity {
     }
 
 
-    public void verificaConexao(){
-        AlertDialog.Builder build = new AlertDialog.Builder(this);
-        DetectaConexao detecta = new DetectaConexao(getApplicationContext());
-        boolean conectado = detecta.verificaConexao();
 
-        if(conectado == false) {
-            build = new AlertDialog.Builder(ActivityImoveis.this);
-            build.setTitle("Conexão com a internet");
-            build.setMessage("Você precisa estar conectado a internet, deseja conectar ?");
-            build.setPositiveButton(
-                    "Sim", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
-                            startActivity(intent);
-                        }
-                    }
-            );
-
-            build.setNegativeButton("Não", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    finish();
-                }
-            });
-
-            AlertDialog alert = build.create();
-            alert.show();
-        }
-    }
 
     @Override
     protected void onDestroy() {
