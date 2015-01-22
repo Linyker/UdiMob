@@ -5,14 +5,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E3E4E2"
+
     >
+
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_weight="20"
         android:background="#E3E4E2"
+        android:layout_weight="50"
         >
+
 
         <fragment
             android:id="@+id/map"
@@ -20,47 +22,42 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+
     </LinearLayout>
+
+
 
 
     <LinearLayout
-        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_weight="1" >
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Distancia"
             android:id="@+id/botao_distancia"
-            android:layout_alignBottom="@+id/map"
-            android:layout_alignParentLeft="true"
             android:background="@drawable/button"
             style="@style/button_text"
-            />
+            android:layout_gravity="center_horizontal"
+            android:layout_above="@+id/botao_rota"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Imoveis"
-            android:id="@+id/botao_imoveis"
-            android:layout_alignBottom="@+id/map"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/button"
-            style="@style/button_text"
-            />
-
-        <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Traçar Rota"
             android:id="@+id/botao_rota"
-            android:layout_alignBottom="@+id/map"
-            android:layout_alignParentRight="true"
             android:background="@drawable/button"
             style="@style/button_text"
-            />
-
-
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true" />
     </LinearLayout>
+
+
 </LinearLayout>

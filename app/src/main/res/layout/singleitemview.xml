@@ -4,14 +4,13 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="20"
-    android:background="#E3E4E2"
+
     >
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_weight="10"
-        android:background="#E3E4E2"
         >
 
         <Gallery
@@ -28,7 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_weight="10"
-        android:background="#E3E4E2"
         >
 
 

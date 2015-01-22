@@ -70,15 +70,7 @@ public class ActivityMapa extends Activity implements GoogleMap.OnMarkerClickLis
 
         Button botao_distancia = (Button) findViewById(R.id.botao_distancia);
         Button botao_rota = (Button) findViewById(R.id.botao_rota);
-        Button botao_imoveis = (Button) findViewById(R.id.botao_imoveis);
 
-        botao_imoveis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ActivityMapa.this,ActivityImoveis.class);
-                startActivity(i);
-            }
-        });
 
         botao_distancia.setOnClickListener(new View.OnClickListener() {
 
