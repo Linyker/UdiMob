@@ -1,6 +1,7 @@
 package pdsi2.udimob.activitys;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -62,6 +63,8 @@ public class ActivityIndicarAmigo extends Activity {
                 startActivity(Intent.createChooser(email,"Escolha por onde quer enviar :"));
             }
         });
+
+
 
     }
 }

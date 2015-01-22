@@ -1,6 +1,7 @@
 package pdsi2.udimob.activitys;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,8 +15,8 @@ import pdsi2.udimob.R;
  */
 public class ActivityEnviarEmail extends Activity{
 
-    private String email_contato,de,para,assunto,mensagem;
-    private EditText editDe,editPara,editAssunto,editMensagem;
+    private String email_contato,para,assunto,mensagem;
+    private EditText editPara,editAssunto,editMensagem;
     private Button botao_enviar;
 
     @Override
@@ -33,7 +34,6 @@ public class ActivityEnviarEmail extends Activity{
         email_contato = i.getStringExtra("email_contato");
         editPara.setText(email_contato);
 
-
         botao_enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +48,6 @@ public class ActivityEnviarEmail extends Activity{
 
                 email.setType("message/rfc822");
                 startActivity(Intent.createChooser(email,"Escolha por onde quer enviar :"));
-
 
             }
         });

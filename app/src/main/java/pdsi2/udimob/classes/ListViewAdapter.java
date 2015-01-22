@@ -10,11 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -180,8 +182,11 @@ public class ListViewAdapter extends BaseAdapter {
                         (imovel.get(position).getLogradouro() + ","+imovel.get(position).getNumero()));
                 //Log.e("ENDERECO",imovel.get(position).getLogradouro() + ","+imovel.get(position).getNumero());
 
+                Bundle bundle = ActivityOptions.makeCustomAnimation(mContext, R.anim.animation1, R.anim.animation2).toBundle();
+
+
                 // Start SingleItemView Class
-                mContext.startActivity(intent);
+                mContext.startActivity(intent,bundle);
             }
         });
 

@@ -9,8 +9,13 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.nfc.Tag;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,16 +40,19 @@ public class ActivitySingleItemView extends Activity {
     private TextView txtbairro,txtpreco,txtproprietario,txtEmail,txtTelefone,txtDescricao,txtEndereco;
     private String bairro,proprietario,imagem_imovel,telefone,email,descricao,endereco,preco;
 
+    TelephonyManager gerenciadorTelefone;
     Bitmap bitmap1;
 
     private static final int MAPA = 0;
     private static final int EMAIL = 1;
     private static final int IMOVEIS = 2;
+    private static final int LIGAR = 3;
 
     private static final int VER_MAPA = Menu.FIRST;
     private static final int ENVIAR_EMAIL = VER_MAPA + 1;
     private static final int INDICAR_AMIGO = ENVIAR_EMAIL + 1;
     private static final int VER_IMOVEIS = INDICAR_AMIGO + 1;
+    private static final int LIGAR_PROPRIETARIO = VER_IMOVEIS + 1;
 
 
     String[] imageIDs = {
@@ -56,21 +64,35 @@ public class ActivitySingleItemView extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         SubMenu mapa = menu.addSubMenu("Mapa");
         SubMenu email = menu.addSubMenu("Email");
         SubMenu imoveis = menu.addSubMenu("Imóveis");
+        SubMenu ligar = menu.addSubMenu("Ligar");
 
         mapa.add(MAPA, VER_MAPA, 0, "Ver imóvel no mapa");
         email.add(EMAIL, ENVIAR_EMAIL, 1, "Enviar email para o proprietário");
         email.add(EMAIL, INDICAR_AMIGO, 0, "Indicar imóvel para um amigo");
         imoveis.add(IMOVEIS, VER_IMOVEIS, 0, "Voltar para a lista de imóveis");
+        ligar.add(LIGAR,LIGAR_PROPRIETARIO,0,"Ligar para proprietário");
 
         return super.onCreateOptionsMenu(menu);
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch (item.getItemId()) {
+
+            case LIGAR_PROPRIETARIO:
+                Intent phoneCall = new Intent(Intent.ACTION_CALL);
+                phoneCall.setData(Uri.parse("tel:"+telefone));
+                startActivity(phoneCall);
+
+                break;
+
             case VER_MAPA:
 
                 Intent i = new Intent(ActivitySingleItemView.this,ActivityMapa.class);
@@ -119,6 +141,13 @@ public class ActivitySingleItemView extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.singleitemview);
+
+        PhoneCallListener phoneCallListener = new PhoneCallListener();
+        gerenciadorTelefone = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+
+        gerenciadorTelefone.listen(phoneCallListener,PhoneStateListener.LISTEN_CALL_STATE);
+
+
 
         Intent i = getIntent();
         bairro = i.getStringExtra("bairro");
@@ -213,6 +242,46 @@ public class ActivitySingleItemView extends Activity {
             return imageView;
         }
     }
+
+
+    private class PhoneCallListener extends PhoneStateListener{
+
+        String TAG = "Iniciando ligação";
+        private boolean phoneCalling = false;
+
+        @Override
+        public void onCallStateChanged(int state, String incomingNumber) {
+
+            if(TelephonyManager.CALL_STATE_RINGING == state){
+                Log.i(TAG,"Chamando numero "+ incomingNumber);
+            }
+
+            if(TelephonyManager.CALL_STATE_OFFHOOK == state){
+                Log.i(TAG,"Ocupado");
+                phoneCalling = true;
+            }
+
+            if(TelephonyManager.CALL_STATE_IDLE == state){
+                Log.e(TAG,"Inativo");
+
+                if(phoneCalling){
+                    Log.i(TAG,"Restart aplicação");
+
+                    Intent i = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(i);
+
+                    phoneCalling = false;
+
+
+                }
+            }
+
+
+
+        }
+    }
+
 }
 
 

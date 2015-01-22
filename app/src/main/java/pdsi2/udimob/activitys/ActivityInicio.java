@@ -1,6 +1,7 @@
 package pdsi2.udimob.activitys;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -41,7 +42,11 @@ public class ActivityInicio extends Activity {
             public void onClick(View view) {
                 Intent i = new Intent(ActivityInicio.this,ActivityImoveis.class);
                 i.putExtra("situacao_imovel","aluguel");
-                startActivity(i);
+
+                Bundle bundle = ActivityOptions.makeCustomAnimation(getApplicationContext(),R.anim.animation3,R.anim.animation4).toBundle();
+
+
+                startActivity(i,bundle);
             }
         });
 
@@ -50,7 +55,10 @@ public class ActivityInicio extends Activity {
             public void onClick(View view) {
                 Intent i = new Intent(ActivityInicio.this,ActivityImoveis.class);
                 i.putExtra("situacao_imovel","venda");
-                startActivity(i);
+
+                Bundle bundle = ActivityOptions.makeCustomAnimation(getApplicationContext(),R.anim.animation3,R.anim.animation4).toBundle();
+
+                startActivity(i,bundle);
 
             }
         });
