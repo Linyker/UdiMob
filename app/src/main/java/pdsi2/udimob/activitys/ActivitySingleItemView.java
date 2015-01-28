@@ -45,14 +45,12 @@ public class ActivitySingleItemView extends Activity {
 
     private static final int MAPA = 0;
     private static final int EMAIL = 1;
-    private static final int IMOVEIS = 2;
-    private static final int LIGAR = 3;
+    private static final int LIGAR = 2;
 
     private static final int VER_MAPA = Menu.FIRST;
     private static final int ENVIAR_EMAIL = VER_MAPA + 1;
     private static final int INDICAR_AMIGO = ENVIAR_EMAIL + 1;
-    private static final int VER_IMOVEIS = INDICAR_AMIGO + 1;
-    private static final int LIGAR_PROPRIETARIO = VER_IMOVEIS + 1;
+    private static final int LIGAR_PROPRIETARIO = INDICAR_AMIGO + 1;
 
 
     String[] imageIDs = {
@@ -67,13 +65,11 @@ public class ActivitySingleItemView extends Activity {
 
         SubMenu mapa = menu.addSubMenu("Mapa");
         SubMenu email = menu.addSubMenu("Email");
-        SubMenu imoveis = menu.addSubMenu("Imóveis");
         SubMenu ligar = menu.addSubMenu("Ligar");
 
         mapa.add(MAPA, VER_MAPA, 0, "Ver imóvel no mapa");
         email.add(EMAIL, ENVIAR_EMAIL, 1, "Enviar email para o proprietário");
         email.add(EMAIL, INDICAR_AMIGO, 0, "Indicar imóvel para um amigo");
-        imoveis.add(IMOVEIS, VER_IMOVEIS, 0, "Voltar para a lista de imóveis");
         ligar.add(LIGAR,LIGAR_PROPRIETARIO,0,"Ligar para proprietário");
 
         return super.onCreateOptionsMenu(menu);
@@ -118,13 +114,6 @@ public class ActivitySingleItemView extends Activity {
                 i3.putExtra("bairro",bairro);
 
                 startActivity(i3);
-
-                break;
-            case VER_IMOVEIS:
-
-                Intent i4 = new Intent(ActivitySingleItemView.this,ActivityImoveis.class);
-                startActivity(i4);
-
                 break;
         }
         return super.onOptionsItemSelected(item);

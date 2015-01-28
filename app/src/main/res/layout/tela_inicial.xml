@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+
+    >
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        />
+
+
+    <Button
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:text="Aluguel"
+        android:id="@+id/botao_aluguel"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.20"
+        android:background="@drawable/button"
+        style="@style/button_text"
+        />
+
+    <Button
+        android:background="@drawable/button"
+        style="@style/button_text"
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:text="Venda"
+        android:id="@+id/botao_venda"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.20" />
+</LinearLayout>
