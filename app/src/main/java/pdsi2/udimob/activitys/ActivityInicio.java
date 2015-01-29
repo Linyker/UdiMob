@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import pdsi2.udimob.R;
 import pdsi2.udimob.classes.DetectaConexao;
@@ -32,7 +33,7 @@ public class ActivityInicio extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_inicial);
 
-        verificaConexao();
+        verificaCondicoesParaUso();
 
         botao_aluguel = (Button) findViewById(R.id.botao_aluguel);
         botao_venda = (Button) findViewById(R.id.botao_venda);
@@ -42,10 +43,7 @@ public class ActivityInicio extends Activity {
             public void onClick(View view) {
                 Intent i = new Intent(ActivityInicio.this,ActivityImoveis.class);
                 i.putExtra("situacao_imovel","aluguel");
-
                 Bundle bundle = ActivityOptions.makeCustomAnimation(getApplicationContext(),R.anim.animation3,R.anim.animation4).toBundle();
-
-
                 startActivity(i,bundle);
             }
         });
@@ -55,7 +53,6 @@ public class ActivityInicio extends Activity {
             public void onClick(View view) {
                 Intent i = new Intent(ActivityInicio.this,ActivityImoveis.class);
                 i.putExtra("situacao_imovel","venda");
-
                 Bundle bundle = ActivityOptions.makeCustomAnimation(getApplicationContext(),R.anim.animation3,R.anim.animation4).toBundle();
 
                 startActivity(i,bundle);
@@ -69,7 +66,7 @@ public class ActivityInicio extends Activity {
 
         PendingIntent i = PendingIntent.getActivity(this,0,new Intent(this,ActivityNotification.class),0);
 
-        note.setLatestEventInfo(this,"Dicas para utilização ","Clique aqui para saber mais!",i);
+        note.setLatestEventInfo(this,"Manual do usuário ","Clique aqui para saber mais!",i);
         mgr.notify(NOTIFY_ME_ID,note);
 
 
@@ -77,11 +74,37 @@ public class ActivityInicio extends Activity {
 
 
 
-
-    public void verificaConexao(){
+    public void verificaCondicoesParaUso(){
         AlertDialog.Builder build = new AlertDialog.Builder(this);
         DetectaConexao detecta = new DetectaConexao(getApplicationContext());
+
+        boolean gps = detecta.verificaGPS();
         boolean conectado = detecta.verificaConexao();
+
+        if(gps == false){
+            build = new AlertDialog.Builder(ActivityInicio.this);
+            build.setTitle("GPS");
+            build.setMessage("Você precisa estar com o GPS habilitado, deseja habilitar ?");
+            build.setPositiveButton(
+                    "Sim", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                            startActivity(intent);
+                        }
+                    }
+            );
+
+            build.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    finish();
+                }
+            });
+
+            AlertDialog alert = build.create();
+            alert.show();
+        }
 
         if(conectado == false) {
             build = new AlertDialog.Builder(ActivityInicio.this);
@@ -107,5 +130,10 @@ public class ActivityInicio extends Activity {
             AlertDialog alert = build.create();
             alert.show();
         }
+
     }
+
+
+
+
 }
