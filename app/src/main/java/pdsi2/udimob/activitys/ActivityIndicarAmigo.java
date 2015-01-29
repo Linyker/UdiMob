@@ -70,7 +70,6 @@ public class ActivityIndicarAmigo extends Activity {
         botao_enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 para = String.valueOf(editPara.getText());
 
                 if(sharedPreferences.getString(Para,"").equals("")) {
@@ -87,7 +86,5 @@ public class ActivityIndicarAmigo extends Activity {
                 editPara.setText("");
             }
         });
-
-
     }
 }

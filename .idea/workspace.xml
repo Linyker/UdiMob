@@ -26,8 +26,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4734d017-235d-48f9-a5a5-f103db4aeaca" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityIndicarAmigo.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityIndicarAmigo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityInicio.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityInicio.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/DetectaConexao.java" afterPath="$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/classes/DetectaConexao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Udimob.iws" />
@@ -64,11 +62,11 @@
       <file leaf-file-name="ActivityIndicarAmigo.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityIndicarAmigo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5828221" vertical-offset="898" max-vertical-offset="1496">
-              <caret line="75" column="66" selection-start-line="75" selection-start-column="66" selection-end-line="75" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.5306749" vertical-offset="1119" max-vertical-offset="1445">
+              <caret line="87" column="11" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
               <folding>
-                <element signature="e#2401#3197#0" expanded="true" />
-                <element signature="e#3186#3187#0" expanded="true" />
+                <element signature="e#2401#3196#0" expanded="true" />
+                <element signature="e#3185#3186#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1891,7 +1889,11 @@
       <created>1422554534950</created>
       <updated>1422554534950</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Implementado SharedPreferences na tela IndicarAmigo">
+      <created>1422557441901</created>
+      <updated>1422557441901</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1994,7 +1996,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="criação do pacote activity" />
     <MESSAGE value="criação do pacote activitys" />
     <MESSAGE value="movendo classes" />
     <MESSAGE value="Ajustes gerais" />
@@ -2019,7 +2020,8 @@
     <MESSAGE value="Alterações gerais" />
     <MESSAGE value="Commit de imagens" />
     <MESSAGE value="Implentado a função de verificar GPS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implentado a função de verificar GPS" />
+    <MESSAGE value="Implementado SharedPreferences na tela IndicarAmigo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementado SharedPreferences na tela IndicarAmigo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2436,11 +2438,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/pdsi2/udimob/activitys/ActivityIndicarAmigo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5828221" vertical-offset="898" max-vertical-offset="1496">
-          <caret line="75" column="66" selection-start-line="75" selection-start-column="66" selection-end-line="75" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.5306749" vertical-offset="1119" max-vertical-offset="1445">
+          <caret line="87" column="11" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
           <folding>
-            <element signature="e#2401#3197#0" expanded="true" />
-            <element signature="e#3186#3187#0" expanded="true" />
+            <element signature="e#2401#3196#0" expanded="true" />
+            <element signature="e#3185#3186#0" expanded="true" />
           </folding>
         </state>
       </provider>
