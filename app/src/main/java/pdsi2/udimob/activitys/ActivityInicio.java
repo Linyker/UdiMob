@@ -23,10 +23,8 @@ import pdsi2.udimob.classes.DetectaConexao;
  */
 public class ActivityInicio extends Activity {
 
-
     private static final int NOTIFY_ME_ID=9999;
     private Button botao_aluguel,botao_venda;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,25 +52,17 @@ public class ActivityInicio extends Activity {
                 Intent i = new Intent(ActivityInicio.this,ActivityImoveis.class);
                 i.putExtra("situacao_imovel","venda");
                 Bundle bundle = ActivityOptions.makeCustomAnimation(getApplicationContext(),R.anim.animation3,R.anim.animation4).toBundle();
-
                 startActivity(i,bundle);
-
             }
         });
 
         //Criando a notificação
         final NotificationManager mgr = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
         Notification note = new Notification(R.drawable.dica,"Udimob-Dicas!",System.currentTimeMillis());
-
         PendingIntent i = PendingIntent.getActivity(this,0,new Intent(this,ActivityNotification.class),0);
-
         note.setLatestEventInfo(this,"Manual do usuário ","Clique aqui para saber mais!",i);
         mgr.notify(NOTIFY_ME_ID,note);
-
-
     }
-
-
 
     public void verificaCondicoesParaUso(){
         AlertDialog.Builder build = new AlertDialog.Builder(this);
@@ -132,8 +122,4 @@ public class ActivityInicio extends Activity {
         }
 
     }
-
-
-
-
 }

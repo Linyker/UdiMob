@@ -27,7 +27,6 @@ public class DetectaConexao {
         }else{
             return true;
         }
-
     }
 
     public boolean verificaConexao(){
@@ -50,7 +49,6 @@ public class DetectaConexao {
             }else{
                 return false;
             }
-
         }else{
             return false;
         }
