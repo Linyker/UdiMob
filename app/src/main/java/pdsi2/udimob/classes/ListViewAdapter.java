@@ -122,33 +122,7 @@ public class ListViewAdapter extends BaseAdapter {
             holder.imagem_imovel.setImageResource(R.drawable.apartamento);
         }
 
-        /*
-        if(imovel.get(position) != null ) {
-            new AsyncTask<Void, Void, Void>() {
 
-                @Override
-                protected Void doInBackground(Void... voids) {
-
-                    try {
-
-                        InputStream in = new URL(imovel.get(position).getImagem_url()).openStream();
-                        bitmap = BitmapFactory.decodeStream(in);
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    return null;
-
-                }
-
-                @Override
-                protected void onPostExecute(Void aVoid) {
-                    if (bitmap != null) {
-                        holder.imagem_imovel.setImageBitmap(bitmap);
-                    }
-                }
-            }.execute();
-        }*/
         // Listen for ListView Item Click
         view.setOnClickListener(new OnClickListener() {
 
@@ -156,12 +130,19 @@ public class ListViewAdapter extends BaseAdapter {
             public void onClick(View arg0) {
                 // Send single item click data to SingleItemView Class
                 Intent intent = new Intent(mContext, ActivitySingleItemView.class);
+
                 // Pass all data rank
                 intent.putExtra("bairro",
                         (imovel.get(position).getBairro()));
 
                 String preco1 = String.valueOf(imovel.get(position).getPreco());
                 intent.putExtra("preco",preco1);
+
+                intent.putExtra("idImovel",
+                        imovel.get(position).getIdImovel());
+
+                intent.putExtra("imagens",
+                        imovel.get(position).getImagem_url());
 
                 intent.putExtra("proprietario",
                         (imovel.get(position).getNome()));

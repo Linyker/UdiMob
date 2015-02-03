@@ -32,17 +32,28 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import pdsi2.udimob.R;
 
 public class ActivitySingleItemView extends Activity {
     // Declare Variables
     private TextView txtbairro,txtpreco,txtproprietario,txtEmail,txtTelefone,txtDescricao,txtEndereco;
-    private String bairro,proprietario,imagem_imovel,telefone,email,descricao,endereco,preco;
+    private int idImovel;
+    private String bairro;
+    private String proprietario;
+    private String imagem_imovel;
+    private String telefone;
+    private String email;
+    private String descricao;
+    private String endereco;
+    private String preco;
 
     TelephonyManager gerenciadorTelefone;
     Bitmap bitmap1;
 
+    private static final String SERVIDOR = "http://192.168.0.158//Udimob/banco_imagens";
     private static final int MAPA = 0;
     private static final int EMAIL = 1;
     private static final int LIGAR = 2;
@@ -52,12 +63,8 @@ public class ActivitySingleItemView extends Activity {
     private static final int INDICAR_AMIGO = ENVIAR_EMAIL + 1;
     private static final int LIGAR_PROPRIETARIO = INDICAR_AMIGO + 1;
 
+    private List<String> caminho_imagem = new ArrayList<String>();
 
-    String[] imageIDs = {
-            "http://4.bp.blogspot.com/-GvQv8Ro99To/UuazzmEP8wI/AAAAAAAAFhI/WoCOm3QhPvE/s1600/Fachada+Sobrado+Esquina+(8).jpg",
-            "http://4.bp.blogspot.com/-fIdnEg5hnrI/UuedmjDFG3I/AAAAAAAAFl0/Gl3gsPqSWgI/s1600/Fachada+Sobrado+Esquina+%25286%2529.jpg",
-            "http://www.dicassobre.com.br/wp-content/uploads/2014/06/fachadas-de-casas-7.jpg"
-    };
 
 
     @Override
@@ -128,46 +135,62 @@ public class ActivitySingleItemView extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.singleitemview);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.singleitemview);
 
-        PhoneCallListener phoneCallListener = new PhoneCallListener();
-        gerenciadorTelefone = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+            PhoneCallListener phoneCallListener = new PhoneCallListener();
+            gerenciadorTelefone = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
 
-        gerenciadorTelefone.listen(phoneCallListener,PhoneStateListener.LISTEN_CALL_STATE);
+            gerenciadorTelefone.listen(phoneCallListener,PhoneStateListener.LISTEN_CALL_STATE);
+
+            Intent i = getIntent();
+            idImovel = i.getIntExtra("idImovel", 0);
+            bairro = i.getStringExtra("bairro");
+            proprietario = i.getStringExtra("proprietario");//nome
+            imagem_imovel = i.getStringExtra("imagem_imovel");
+            email = i.getStringExtra("email");
+            descricao = i.getStringExtra("descricao");
+            telefone = i.getStringExtra("telefone");
+            endereco = i.getStringExtra("endereco");
+            preco = i.getStringExtra("preco");
+            imagem_imovel = i.getStringExtra("imagens");
+            proprietario = proprietario.replace(" ","_");
+            String url_imagem = SERVIDOR+"/"+proprietario+"/"+idImovel+"/";
+
+            String[] images = null;
 
 
+            if(imagem_imovel.indexOf(",") != -1){ //se for diferente de -1 existe
+                images  = imagem_imovel.split(",");
 
-        Intent i = getIntent();
-        bairro = i.getStringExtra("bairro");
-        proprietario = i.getStringExtra("proprietario");
-        imagem_imovel = i.getStringExtra("imagem_imovel");
-        email = i.getStringExtra("email");
-        descricao = i.getStringExtra("descricao");
-        telefone = i.getStringExtra("telefone");
-        endereco = i.getStringExtra("endereco");
-        preco = i.getStringExtra("preco");
+                for(int j=0;j<images.length;j++){
+                    caminho_imagem.add(url_imagem+images[j]);
+                }
+            }else{
 
-        // Locate the TextViews in singleitemview.xml
-        txtbairro = (TextView) findViewById(R.id.bairro);
-        txtpreco = (TextView) findViewById(R.id.preco);
-        txtproprietario = (TextView) findViewById(R.id.proprietario);
-        txtEmail = (TextView) findViewById(R.id.email);
-        txtTelefone = (TextView) findViewById(R.id.telefone);
-        txtDescricao = (TextView) findViewById(R.id.descricao);
-        txtEndereco = (TextView) findViewById(R.id.endereco);
+               caminho_imagem.add(url_imagem+imagem_imovel);
+            }
 
-        // Load the results into the TextViews
-        txtbairro.setText(bairro);
-        txtpreco.setText("R$"+preco);
-        txtproprietario.setText(proprietario);
-        txtEmail.setText(email);
-        txtTelefone.setText(telefone);
-        txtDescricao.setText(descricao);
-        txtEndereco.setText(endereco);
+            // Locate the TextViews in singleitemview.xml
+            txtbairro = (TextView) findViewById(R.id.bairro);
+            txtpreco = (TextView) findViewById(R.id.preco);
+            txtproprietario = (TextView) findViewById(R.id.proprietario);
+            txtEmail = (TextView) findViewById(R.id.email);
+            txtTelefone = (TextView) findViewById(R.id.telefone);
+            txtDescricao = (TextView) findViewById(R.id.descricao);
+            txtEndereco = (TextView) findViewById(R.id.endereco);
 
-        Gallery gallery = (Gallery) findViewById(R.id.gallery1);
-        gallery.setAdapter(new ImageAdapter(this));
+            // Load the results into the TextViews
+            txtbairro.setText(bairro);
+            txtpreco.setText("R$"+preco);
+            txtproprietario.setText(proprietario);
+            txtEmail.setText(email);
+            txtTelefone.setText(telefone);
+            txtDescricao.setText(descricao);
+            txtEndereco.setText(endereco);
+
+            Gallery gallery = (Gallery) findViewById(R.id.gallery1);
+            gallery.setAdapter(new ImageAdapter(this));
 
     }
 
@@ -187,7 +210,7 @@ public class ActivitySingleItemView extends Activity {
         //---returns the number of images---
         public int getCount()
         {
-            return imageIDs.length;
+            return caminho_imagem.size();
         }
         //---returns the ID of an item---
         public Object getItem(int position)
@@ -210,7 +233,8 @@ public class ActivitySingleItemView extends Activity {
                 @Override
                 protected Void doInBackground(Void... voids) {
                     try {
-                        InputStream in = new URL(imageIDs[position]).openStream();
+                        InputStream in = new URL(caminho_imagem.get(position)).openStream();
+
                         bitmap1 = BitmapFactory.decodeStream(in);
                     } catch (IOException e) {
                         e.printStackTrace();

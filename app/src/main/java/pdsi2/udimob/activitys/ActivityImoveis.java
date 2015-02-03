@@ -141,11 +141,10 @@ public class ActivityImoveis extends Activity {
 
                     for (int i = 0; i < imovels.size(); i++)
                     {
-
                         if(situacao_imovel.equals("aluguel")){
                             if(imovels.get(i).getTipoImovel() == 2 || imovels.get(i).getTipoImovel() == 4){
                                 Log.e("Aluguel", String.valueOf(imovels.get(i).getTipoImovel()));
-                                Imovel wp = new Imovel(imovels.get(i).getUsuario(),imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),imovels.get(i).getEmail(),imovels.get(i).getTelefone(),"");
+                                Imovel wp = new Imovel(imovels.get(i).getUsuario(),imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),imovels.get(i).getEmail(),imovels.get(i).getTelefone(),imovels.get(i).getImagem_url());
                                 // Binds all strings into an array
                                 arraylist.add(wp);
                             }
@@ -153,7 +152,7 @@ public class ActivityImoveis extends Activity {
                         }else if(situacao_imovel.equals("venda")){
                             if(imovels.get(i).getTipoImovel() == 1 || imovels.get(i).getTipoImovel() == 3){
                                 Log.e("Venda", String.valueOf(imovels.get(i).getTipoImovel()));
-                                Imovel wp = new Imovel(imovels.get(i).getUsuario(),imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),imovels.get(i).getEmail(),imovels.get(i).getTelefone(),"");
+                                Imovel wp = new Imovel(imovels.get(i).getUsuario(),imovels.get(i).getIdImovel(),imovels.get(i).getTipoImovel(),imovels.get(i).getUsuario(),imovels.get(i).getLogradouro(),imovels.get(i).getNumero(),imovels.get(i).getBairro(),imovels.get(i).getDescricaoImovel(),imovels.get(i).getPreco(),imovels.get(i).getEmail(),imovels.get(i).getTelefone(),imovels.get(i).getImagem_url());
                                 // Binds all strings into an array
                                 arraylist.add(wp);
                             }
